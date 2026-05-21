@@ -1,0 +1,63 @@
+.. _故障排查:
+
+故障排查
+############
+
+.. |日志| image:: images/日志按钮.png
+   :width: 18px
+
+.. |帮助| image:: images/帮助按钮.png
+   :width: 18px
+
+可以在Coboπ软件的日志界面查看错误信息。操作步骤如下：
+
+ - 打开Coboπ软件，连接机器人，点击 |日志| 按钮，即可查看故障记录。
+   
+   .. figure:: ./images/日志界面.*
+     :align: center
+     :width: 15cm
+
+     日志界面
+
+ - 点击故障名称即可查看该故障的具体信息和解决方案。
+  
+   .. figure:: ./images/故障信息.*
+     :align: center
+     :width: 15cm
+
+     故障信息
+    
+ - 也可使用搜索功能或按时间筛选出目标故障。
+  
+   .. figure:: ./images/筛选故障.*
+     :align: center
+     :width: 15cm
+
+     筛选故障
+
+ - 更多操作可查看Coboπ软件用户手册，此手册可通过 `JAKA官网 <https://www.jaka.com/zh>`_ 或在软件内部点击 |帮助| 按钮，再点击 **帮助中心** 获取。
+
+也可以在 **JAKA官网 > 服务与支持 > 常见问题 > 故障查询** 分类下查询故障代码，网址为 `故障查询 <https://www.jaka.com/co mmonQuestion#tp3>`_ 。
+
+故障代码含义如下：
+
+.. figure:: ./images/故障代码含义.*
+   :align: center
+   :width: 7cm
+
+   故障代码含义
+
+1.	错误来源
+2.	报错关节
+3.	具体错误代码
+
+**错误来源：**
+
+ - 0：控制器
+ - 1：伺服
+ - F：App
+
+**报错关节：**
+
+ - 0-5：关节1至关节6
+ - F：App
