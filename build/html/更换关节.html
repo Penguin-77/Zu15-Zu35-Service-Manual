@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="5. 打包机运输" href="%E6%89%93%E5%8C%85%E5%8F%8A%E8%BF%90%E8%BE%93.html" />
+    <link rel="next" title="5. 打包及运输" href="%E6%89%93%E5%8C%85%E5%8F%8A%E8%BF%90%E8%BE%93.html" />
     <link rel="prev" title="4.4. 更换末端法兰" href="%E6%9B%B4%E6%8D%A2%E6%9C%AB%E7%AB%AF%E6%B3%95%E5%85%B0.html" /> 
 </head>
 
@@ -74,7 +74,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="%E6%89%93%E5%8C%85%E5%8F%8A%E8%BF%90%E8%BE%93.html">5. 打包机运输</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E6%89%93%E5%8C%85%E5%8F%8A%E8%BF%90%E8%BE%93.html">5. 打包及运输</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5.html">6. 故障排查</a></li>
 </ul>
 
@@ -109,12 +109,12 @@
 <p>机器人的精度，分为重复定位精度和绝对定位精度：</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>对于只对重复定位精度有要求的场景（比如搬运、码垛、点胶、点焊），这些场景只要每次都能运行到同一个固定的点位就可以了，是可以更换关节的。</p></li>
-<li><p>对绝对定位精度要求较高的场景，不建议更换关节，当更换完关节后，存在绝对定位精度丢失、轨迹精度降低、无法满足工艺要求的情况；此种场景，必须返厂进行激光跟踪仪标定，方可恢复绝对定位精度；要求绝对定位精度的场景，主要为以下场景：</p>
+<li><p>对于只对重复定位精度有要求的场景（如搬运、码垛、点胶、点焊），这些场景只要每次都能运行到同一个固定的点位就可以了，可以更换关节。</p></li>
+<li><p>对绝对定位精度要求较高的场景，不建议自行更换关节，更换完关节后，存在绝对定位精度丢失、轨迹精度降低、无法满足工艺要求的情况；更换关节后，必须使用激光跟踪仪标定，才可恢复绝对定位精度。要求绝对定位精度的场景，主要为以下场景：</p>
 <ul>
 <li><p>离线编程场景（导入机械模型，自动生成示教轨迹）。</p></li>
 <li><p>视觉（2D、3D）用于视觉引导、纠偏等场景。</p></li>
-<li><p>存在具体的工艺要求，如直线涂胶/焊接，长距离直线穿孔；圆弧涂胶/焊接等。</p></li>
+<li><p>存在具体的工艺要求，如直线涂胶、焊接，长距离直线穿孔；圆弧涂胶、焊接等。</p></li>
 </ul>
 </li>
 </ul>
@@ -257,11 +257,17 @@
 <td><p>8mm开口扳手</p></td>
 <td><p>9Nm</p></td>
 </tr>
-<tr class="row-odd"><td><p>底座—一关节</p></td>
+<tr class="row-odd"><td><p>基座—一关节</p></td>
 <td><p>M5×10mm 外六角螺栓</p></td>
 <td><p>12</p></td>
 <td><p>8mm开口扳手</p></td>
 <td><p>9Nm</p></td>
+</tr>
+<tr class="row-even"><td><p>安装平面—基座</p></td>
+<td><p>M8mm 外六角螺栓</p></td>
+<td><p>4</p></td>
+<td><p>13mm开口扳手</p></td>
+<td><p>40Nm</p></td>
 </tr>
 </tbody>
 </table>
@@ -332,11 +338,17 @@
 <td><p>13mm开口扳手</p></td>
 <td><p>37Nm</p></td>
 </tr>
-<tr class="row-even"><td><p>底座—一关节</p></td>
+<tr class="row-even"><td><p>基座—一关节</p></td>
 <td><p>M8×30mm 外六角螺栓</p></td>
 <td><p>12</p></td>
 <td><p>13mm开口扳手</p></td>
 <td><p>37Nm</p></td>
+</tr>
+<tr class="row-odd"><td><p>安装平面—基座</p></td>
+<td><p>M16mm 外六角螺栓</p></td>
+<td><p>4</p></td>
+<td><p>24mm开口扳手</p></td>
+<td><p>305Nm</p></td>
 </tr>
 </tbody>
 </table>
@@ -390,9 +402,21 @@
 </ol>
 </li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<ul class="simple">
+<li><p>输入接口所连接的线束，是指从上一关节（或管臂） 到待更换关节之间的线束。</p></li>
+<li><p>输出接口所连接的线束，是指从待更换关节到下一关节（或管臂） 之间的线束。</p></li>
+<li><p>示例（以二关节为待更换关节）：上一关节为一关节，下一关节为三关节。</p></li>
+</ul>
+</div>
 </section>
 <section id="zu15">
 <span id="id13"></span><h2><span class="section-number">4.5.4. </span>Zu15更换关节<a class="headerlink" href="#zu15" title="链接到此标题。"></a></h2>
+<p>Zu15的一关节至三关节的固定螺栓为外六角螺栓，采用轴向螺钉固定的方式；四关节至六关节的固定螺栓为外六角螺栓，采用径向螺钉固定的方式，拆装方式略有差异，因此分开说明。</p>
+<section id="id14">
+<span id="id15"></span><h3><span class="section-number">4.5.4.1. </span>更换1/2/3关节<a class="headerlink" href="#id14" title="链接到此标题。"></a></h3>
+<p>以更换二关节为例，更换步骤如下，其他关节操作步骤类似：</p>
 <p>拆装关节之前，需准备如下工具：</p>
 <table class="docutils align-default" id="id28">
 <caption><span class="caption-number">表 4.8 </span><span class="caption-text">更换关节工具清单</span><a class="headerlink" href="#id28" title="链接到此表格。"></a></caption>
@@ -410,7 +434,7 @@
 <tbody>
 <tr class="row-even"><td><p>1</p></td>
 <td><p>内六角螺丝刀</p></td>
-<td><p>1.5mm，2.5mm，3mm</p></td>
+<td><p>2.5mm</p></td>
 </tr>
 <tr class="row-odd"><td><p>2</p></td>
 <td><p>十字螺丝刀</p></td>
@@ -442,16 +466,12 @@
 </tr>
 </tbody>
 </table>
-<p>Zu15的一关节至三关节的固定螺栓为外六角螺栓，采用轴向螺钉固定的方式；四关节至六关节的固定螺栓为外六角螺栓，采用径向螺钉固定的方式，拆装方式略有差异，因此分开说明。</p>
-<section id="id14">
-<span id="id15"></span><h3><span class="section-number">4.5.4.1. </span>更换1/2/3关节<a class="headerlink" href="#id14" title="链接到此标题。"></a></h3>
-<p>以更换二关节为例，一至三关节更换步骤如下，其他关节操作步骤类似：</p>
 <p><strong>关节拆卸：</strong></p>
 <ul>
 <li><p><strong>拆卸前准备</strong></p>
 <ul class="simple">
 <li><p>断开电源，并佩戴防静电手环。</p></li>
-<li><p>移动机器人至一个便于拆卸的位置，如有必要，从工作单元上拆下整个机械手臂，并将其放在固定工作台面上。</p></li>
+<li><p>移动机器人至一个便于拆卸的位置，如有必要，从工作单元上拆下整个机器人，并将其放在固定工作台面上。</p></li>
 </ul>
 </li>
 <li><p><strong>拆卸装饰环</strong></p>
@@ -507,8 +527,7 @@
 </figure>
 </div></blockquote>
 </li>
-<li><p>使用斜口钳剪断固定EtherCAT线、红色和黑色电源线的扎带。</p></li>
-<li><p>使用镊子将EtherCAT线、红色和黑色电源线的端子拔下，拆卸关节时只需拔下穿过二关节出线孔的连接线端子。</p></li>
+<li><p>使用斜口钳剪断固定EtherCAT线、红色和黑色电源线的扎带。使用镊子将EtherCAT线、红色和黑色电源线的端子拔下。</p></li>
 <li><p>使用开口扳手旋松并取下固定关节的外六角螺栓和垫片。扳手和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
 <blockquote>
 <div><figure class="align-center" id="id34">
@@ -535,7 +554,7 @@
 </li>
 <li><p><strong>分离一关节与二关节</strong></p>
 <ul>
-<li><p>使用2.5mm内六角螺丝刀旋松3颗固定环形灯壳的M3内六角螺钉。</p>
+<li><p>使用2.5mm内六角螺丝刀旋松4颗固定环形灯壳的M3内六角螺钉。</p>
 <blockquote>
 <div><figure class="align-center" id="id36">
 <a class="reference internal image-reference" href="_images/取下环形灯壳螺钉.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3%E8%9E%BA%E9%92%89.svg" src="_images/%E5%8F%96%E4%B8%8B%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3%E8%9E%BA%E9%92%89.svg" style="width: 6cm;" />
@@ -546,7 +565,7 @@
 </figure>
 </div></blockquote>
 </li>
-<li><p>使用镊子拔下连接至环形灯壳内灯板上的端子，取下一关节的环形灯壳。</p>
+<li><p>使用镊子拔下环形灯壳内灯板上的环形灯线端子，取下一关节的环形灯壳。</p>
 <blockquote>
 <div><figure class="align-center" id="id37">
 <a class="reference internal image-reference" href="_images/取下环形灯壳.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3.svg" src="_images/%E5%8F%96%E4%B8%8B%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3.svg" style="width: 6cm;" />
@@ -558,7 +577,7 @@
 </div></blockquote>
 </li>
 <li><p>使用斜口钳剪断固定EtherCAT线、红色和黑色电源线的扎带。</p></li>
-<li><p>使用镊子将EtherCAT线、红色和黑色电源线的端子拔下，拆卸关节时只需拔下穿过一关节出线孔的连接线端子。</p></li>
+<li><p>使用镊子将EtherCAT线、红色和黑色电源线的端子拔下，此时只需拔下连接至二关节的线束端子，即连接至 <a class="reference internal" href="#id11"><span class="std std-ref">驱动板接口定义</span></a> 中输出接口的线束端子。</p></li>
 <li><p>使用开口扳手旋松并取下固定关节的外六角螺栓和垫片。扳手和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
 <blockquote>
 <div><figure class="align-center" id="id38">
@@ -585,7 +604,6 @@
 </li>
 <li><p><strong>取出二关节线束</strong></p>
 <ul>
-<li><p>拔下二关节驱动板上的线束端子。</p></li>
 <li><p>使用2.5mm内六角螺丝刀旋松1颗固定扎线固定座的M3内六角螺钉，取下扎线固定座。</p>
 <blockquote>
 <div><figure class="align-center" id="id40">
@@ -709,7 +727,7 @@
 </figure>
 </div></blockquote>
 </li>
-<li><p>将固定关节的外六角螺栓和垫片放入一关节的螺纹孔中，并使用开口扳手按对角顺序拧紧螺栓。扳手和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
+<li><p>将固定关节的外六角螺栓和垫片放入一关节的螺纹孔中，并使用开口扳手按对角顺序拧紧螺栓。螺栓拧紧顺序参考 <a class="reference internal" href="#id5"><span class="std std-ref">关节螺栓紧固</span></a> ，扳手和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
 <blockquote>
 <div><figure class="align-center" id="id50">
 <a class="reference internal image-reference" href="_images/拧紧一关节螺钉.svg"><img alt="_images/%E6%8B%A7%E7%B4%A7%E4%B8%80%E5%85%B3%E8%8A%82%E8%9E%BA%E9%92%89.svg" src="_images/%E6%8B%A7%E7%B4%A7%E4%B8%80%E5%85%B3%E8%8A%82%E8%9E%BA%E9%92%89.svg" style="width: 8cm;" />
@@ -758,7 +776,7 @@
 </figure>
 </div></blockquote>
 </li>
-<li><p>将固定关节的外六角螺栓和垫片放入二关节的螺纹孔中，并使用开口扳手按对角顺序拧紧螺栓。扳手和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
+<li><p>将固定关节的外六角螺栓和垫片放入二关节的螺纹孔中，并使用开口扳手按对角顺序拧紧螺栓。螺栓拧紧顺序参考 <a class="reference internal" href="#id5"><span class="std std-ref">关节螺栓紧固</span></a> ，扳手和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
 <blockquote>
 <div><figure class="align-center" id="id54">
 <a class="reference internal image-reference" href="_images/拧紧二关节螺钉.svg"><img alt="_images/%E6%8B%A7%E7%B4%A7%E4%BA%8C%E5%85%B3%E8%8A%82%E8%9E%BA%E9%92%89.svg" src="_images/%E6%8B%A7%E7%B4%A7%E4%BA%8C%E5%85%B3%E8%8A%82%E8%9E%BA%E9%92%89.svg" style="width: 6cm;" />
@@ -846,8 +864,8 @@
 </figure>
 </div></blockquote>
 <ul class="simple">
-<li><p>将关节驱动版上的LED信号线插到环形灯壳的灯板上。</p></li>
-<li><p>将环形灯壳置于一关节外壳上，使环形灯壳上的孔对准外壳上的螺纹孔，使用2.5mm内六角螺丝刀拧紧3颗M3内六角螺钉，以固定一关节环形灯壳。安装环形灯壳时切勿压到驱动版上的线束。</p></li>
+<li><p>将关节驱动版上的环形灯线插到环形灯壳的灯板上。</p></li>
+<li><p>将环形灯壳置于一关节外壳上，使环形灯壳上的孔对准二关节外壳上的螺纹孔，使用2.5mm内六角螺丝刀拧紧4颗M3内六角螺钉，以固定一关节环形灯壳。安装环形灯壳时切勿压到驱动版上的线束。</p></li>
 </ul>
 <blockquote>
 <div><figure class="align-center" id="id61">
@@ -962,478 +980,10 @@
 </section>
 <section id="id16">
 <span id="id17"></span><h3><span class="section-number">4.5.4.2. </span>更换4/5/6关节<a class="headerlink" href="#id16" title="链接到此标题。"></a></h3>
-<p>以更换四关节为例，四至六关节更换步骤如下，其他关节操作步骤类似：</p>
-<p><strong>关节拆卸：</strong></p>
-<ul>
-<li><p><strong>拆卸前准备</strong></p>
-<ul class="simple">
-<li><p>断开电源，并佩戴防静电手环。</p></li>
-<li><p>移动机器人至一个便于拆卸的位置，如有必要，从工作单元上拆下整个机械手臂，并将其放在固定工作台面上。</p></li>
-</ul>
-</li>
-<li><p><strong>拆卸装饰环</strong></p>
-<ul>
-<li><p>使用PH1十字螺丝刀旋松4颗小臂、四关节之间的装饰环固定的M3十字螺钉，取下两个装饰环。</p>
-<blockquote>
-<div><figure class="align-center" id="id71">
-<a class="reference internal image-reference" href="_images/取下四关节装饰环螺钉.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" src="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" style="width: 7cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.109 </span><span class="caption-text">取下装饰环螺钉</span><a class="headerlink" href="#id71" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id72">
-<a class="reference internal image-reference" href="_images/取下四关节装饰环.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" src="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" style="width: 10cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.110 </span><span class="caption-text">取下装饰环</span><a class="headerlink" href="#id72" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>使用PH1十字螺丝刀旋松4颗四、五关节之间的装饰环固定的M3十字螺钉，取下两个装饰环。</p>
-<blockquote>
-<div><figure class="align-center" id="id73">
-<a class="reference internal image-reference" href="_images/取下五关节装饰环螺钉.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" src="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" style="width: 7cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.111 </span><span class="caption-text">取下装饰环螺钉</span><a class="headerlink" href="#id73" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id74">
-<a class="reference internal image-reference" href="_images/取下五关节装饰环.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" src="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" style="width: 10cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.112 </span><span class="caption-text">取下装饰环</span><a class="headerlink" href="#id74" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-</ul>
-</li>
-<li><p><strong>分离四关节与五关节</strong></p>
-<ul>
-<li><p>使用2.5mm内六角螺丝刀旋松3颗固定闷盖的M3内六角螺钉，拆下五关节的闷盖。</p>
-<blockquote>
-<div><figure class="align-center" id="id75">
-<a class="reference internal image-reference" href="_images/取下五关节闷盖.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" src="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" style="width: 10cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.113 </span><span class="caption-text">取下五关节闷盖</span><a class="headerlink" href="#id75" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>使用斜口钳剪断固定EtherCAT线、红色和黑色电源线的扎带。</p></li>
-<li><p>使用镊子将EtherCAT线、红色和黑色电源线的端子拔下，拆卸关节时只需拔下穿过五关节出线孔的连接线端子。</p></li>
-<li><p>使用内六角螺丝刀旋松并取下固定关节的内六角螺栓和径向螺钉定位套。内六角螺丝刀和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
-<blockquote>
-<div><figure class="align-center" id="id76">
-<a class="reference internal image-reference" href="_images/旋松五关节螺栓.svg"><img alt="_images/%E6%97%8B%E6%9D%BE%E4%BA%94%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93.svg" src="_images/%E6%97%8B%E6%9D%BE%E4%BA%94%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.114 </span><span class="caption-text">旋松五关节螺栓</span><a class="headerlink" href="#id76" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>缓慢将五关节取下，同时将线束从五关节的出线孔逐一抽出，为防止线束端子卡住，推荐先抽出电源线，再抽出EtherCAT线。</p>
-<blockquote>
-<div><figure class="align-center" id="id77">
-<a class="reference internal image-reference" href="_images/取下五关节.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82.svg" src="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82.svg" style="width: 12cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.115 </span><span class="caption-text">取下五关节</span><a class="headerlink" href="#id77" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-</ul>
-</li>
-<li><p><strong>分离四关节与小臂</strong></p>
-<ul>
-<li><p>使用2.5mm内六角螺丝刀旋松3颗固定闷盖的M3内六角螺钉，拆下四关节的闷盖。</p>
-<blockquote>
-<div><figure class="align-center" id="id78">
-<a class="reference internal image-reference" href="_images/取下四关节闷盖.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" src="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.116 </span><span class="caption-text">取下四关节闷盖</span><a class="headerlink" href="#id78" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>使用斜口钳剪断固定EtherCAT线、红色和黑色电源线的扎带。</p></li>
-<li><p>使用镊子将EtherCAT线、红色和黑色电源线的端子拔下，拆卸关节时只需拔下穿过四关节出线孔的连接线端子。</p></li>
-<li><p>使用内六角螺丝刀旋松并取下固定关节的内六角螺栓和径向螺钉定位套。内六角螺丝刀和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
-<blockquote>
-<div><figure class="align-center" id="id79">
-<a class="reference internal image-reference" href="_images/旋松四关节螺栓.svg"><img alt="_images/%E6%97%8B%E6%9D%BE%E5%9B%9B%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93.svg" src="_images/%E6%97%8B%E6%9D%BE%E5%9B%9B%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.117 </span><span class="caption-text">旋松四关节螺栓</span><a class="headerlink" href="#id79" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>缓慢将四关节取下，同时将线束从四关节的出线孔逐一抽出，为防止线束端子卡住，推荐先抽出电源线，再抽出EtherCAT线。</p>
-<blockquote>
-<div><figure class="align-center" id="id80">
-<a class="reference internal image-reference" href="_images/取下四关节.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82.svg" src="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.118 </span><span class="caption-text">取下四关节</span><a class="headerlink" href="#id80" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-</ul>
-</li>
-<li><p><strong>取出四关节线束</strong></p>
-<ul>
-<li><p>拔下四关节驱动板上的线束端子。</p></li>
-<li><p>使用2.5mm内六角螺丝刀旋松并取下1颗固定线圈固定钣金的M3内六角螺钉。</p>
-<blockquote>
-<div><figure class="align-center" id="id81">
-<a class="reference internal image-reference" href="_images/取下线圈固定件螺钉.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E7%BA%BF%E5%9C%88%E5%9B%BA%E5%AE%9A%E4%BB%B6%E8%9E%BA%E9%92%89.svg" src="_images/%E5%8F%96%E4%B8%8B%E7%BA%BF%E5%9C%88%E5%9B%BA%E5%AE%9A%E4%BB%B6%E8%9E%BA%E9%92%89.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.119 </span><span class="caption-text">取下线圈固定件螺钉</span><a class="headerlink" href="#id81" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>将线圈固定件连同关节线束从关节驱动板侧取出。</p>
-<blockquote>
-<div><figure class="align-center" id="id82">
-<a class="reference internal image-reference" href="_images/取出四关节线束.svg"><img alt="_images/%E5%8F%96%E5%87%BA%E5%9B%9B%E5%85%B3%E8%8A%82%E7%BA%BF%E6%9D%9F.svg" src="_images/%E5%8F%96%E5%87%BA%E5%9B%9B%E5%85%B3%E8%8A%82%E7%BA%BF%E6%9D%9F.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.120 </span><span class="caption-text">取出四关节线束</span><a class="headerlink" href="#id82" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>关节安装：</strong></p>
-<ul>
-<li><p><strong>穿入四关节线束</strong></p>
-<ul>
-<li><p>将密封油脂装入针筒内，并将油脂注入新关节法兰面的凹槽内，确保密封油脂涂抹均匀且充满凹槽。</p>
-<blockquote>
-<div><figure class="align-center" id="id83">
-<a class="reference internal image-reference" href="_images/四关节涂抹密封油脂.svg"><img alt="_images/%E5%9B%9B%E5%85%B3%E8%8A%82%E6%B6%82%E6%8A%B9%E5%AF%86%E5%B0%81%E6%B2%B9%E8%84%82.svg" src="_images/%E5%9B%9B%E5%85%B3%E8%8A%82%E6%B6%82%E6%8A%B9%E5%AF%86%E5%B0%81%E6%B2%B9%E8%84%82.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.121 </span><span class="caption-text">四关节涂抹密封油脂</span><a class="headerlink" href="#id83" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>取对应O型圈，将其放入四关节法兰面凹槽中，按压O型圈，使其完全嵌入到凹槽中。</p>
-<blockquote>
-<div><figure class="align-center" id="id84">
-<a class="reference internal image-reference" href="_images/四关节放入O型圈.svg"><img alt="_images/%E5%9B%9B%E5%85%B3%E8%8A%82%E6%94%BE%E5%85%A5O%E5%9E%8B%E5%9C%88.svg" src="_images/%E5%9B%9B%E5%85%B3%E8%8A%82%E6%94%BE%E5%85%A5O%E5%9E%8B%E5%9C%88.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.122 </span><span class="caption-text">四关节放入O型圈</span><a class="headerlink" href="#id84" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>将拆下的线束从四关节驱动板侧的中心孔侧穿过。</p>
-<blockquote>
-<div><figure class="align-center" id="id85">
-<a class="reference internal image-reference" href="_images/穿过四关节线束.svg"><img alt="_images/%E7%A9%BF%E8%BF%87%E5%9B%9B%E5%85%B3%E8%8A%82%E7%BA%BF%E6%9D%9F.svg" src="_images/%E7%A9%BF%E8%BF%87%E5%9B%9B%E5%85%B3%E8%8A%82%E7%BA%BF%E6%9D%9F.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.123 </span><span class="caption-text">穿过四关节线束</span><a class="headerlink" href="#id85" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>将线圈固定钣金置于螺柱上，使用2.5mm内六角螺丝刀拧紧固定线圈固定钣金的螺钉。</p>
-<blockquote>
-<div><figure class="align-center" id="id86">
-<a class="reference internal image-reference" href="_images/拧紧线圈固定件螺钉.svg"><img alt="_images/%E6%8B%A7%E7%B4%A7%E7%BA%BF%E5%9C%88%E5%9B%BA%E5%AE%9A%E4%BB%B6%E8%9E%BA%E9%92%89.svg" src="_images/%E6%8B%A7%E7%B4%A7%E7%BA%BF%E5%9C%88%E5%9B%BA%E5%AE%9A%E4%BB%B6%E8%9E%BA%E9%92%89.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.124 </span><span class="caption-text">拧紧线圈固定件螺钉</span><a class="headerlink" href="#id86" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>使用扎带将线圈固定件上方的热缩管扎上，使用斜口钳将多余扎带剪掉，注意剪扎带时切勿剪到线束。</p></li>
-</ul>
-</li>
-<li><p><strong>组装小臂与四关节</strong></p>
-<ul>
-<li><p>将密封油脂装入针筒内，并将油脂注入小臂法兰面的凹槽内，确保密封油脂涂抹均匀且充满凹槽。</p>
-<blockquote>
-<div><figure class="align-center" id="id87">
-<a class="reference internal image-reference" href="_images/小臂涂抹密封油脂.svg"><img alt="_images/%E5%B0%8F%E8%87%82%E6%B6%82%E6%8A%B9%E5%AF%86%E5%B0%81%E6%B2%B9%E8%84%82.svg" src="_images/%E5%B0%8F%E8%87%82%E6%B6%82%E6%8A%B9%E5%AF%86%E5%B0%81%E6%B2%B9%E8%84%82.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.125 </span><span class="caption-text">小臂涂抹密封油脂</span><a class="headerlink" href="#id87" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>取对应O型圈，将其放入小臂法兰面凹槽中，按压O型圈，使其完全嵌入到凹槽中。</p>
-<blockquote>
-<div><figure class="align-center" id="id88">
-<a class="reference internal image-reference" href="_images/小臂放入O型圈.svg"><img alt="_images/%E5%B0%8F%E8%87%82%E6%94%BE%E5%85%A5O%E5%9E%8B%E5%9C%88.svg" src="_images/%E5%B0%8F%E8%87%82%E6%94%BE%E5%85%A5O%E5%9E%8B%E5%9C%88.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.126 </span><span class="caption-text">小臂放入O型圈</span><a class="headerlink" href="#id88" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>将小臂的线束穿过四关节的出线孔，为防止线束端子卡住，推荐先穿过EtherCAT线，再穿过电源线。</p></li>
-<li><p>将小臂法兰面凹槽对准四关节的凸台，使小臂法兰面与四关节贴合。</p>
-<figure class="align-center" id="id89">
-<a class="reference internal image-reference" href="_images/小臂四关节凸台对齐凹槽.svg"><img alt="_images/%E5%B0%8F%E8%87%82%E5%9B%9B%E5%85%B3%E8%8A%82%E5%87%B8%E5%8F%B0%E5%AF%B9%E9%BD%90%E5%87%B9%E6%A7%BD.svg" src="_images/%E5%B0%8F%E8%87%82%E5%9B%9B%E5%85%B3%E8%8A%82%E5%87%B8%E5%8F%B0%E5%AF%B9%E9%BD%90%E5%87%B9%E6%A7%BD.svg" style="width: 15cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.127 </span><span class="caption-text">小臂五关节凸台对齐凹槽</span><a class="headerlink" href="#id89" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</li>
-<li><p>将径向螺钉定位套放入四关节侧面的4个锥孔内，并将4颗较长的螺栓放入定位套内。</p>
-<figure class="align-center" id="id90">
-<a class="reference internal image-reference" href="_images/四关节放入径向螺钉定位套.svg"><img alt="_images/%E5%9B%9B%E5%85%B3%E8%8A%82%E6%94%BE%E5%85%A5%E5%BE%84%E5%90%91%E8%9E%BA%E9%92%89%E5%AE%9A%E4%BD%8D%E5%A5%97.svg" src="_images/%E5%9B%9B%E5%85%B3%E8%8A%82%E6%94%BE%E5%85%A5%E5%BE%84%E5%90%91%E8%9E%BA%E9%92%89%E5%AE%9A%E4%BD%8D%E5%A5%97.svg" style="width: 7cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.128 </span><span class="caption-text">放入径向螺钉定位套</span><a class="headerlink" href="#id90" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</li>
-<li><p>使用内六角螺丝刀按对角顺序拧紧4颗螺栓。螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p></li>
-</ul>
-<blockquote>
-<div><figure class="align-center" id="id91">
-<a class="reference internal image-reference" href="_images/安装四关节螺栓（长）.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E5%9B%9B%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E9%95%BF%EF%BC%89.svg" src="_images/%E5%AE%89%E8%A3%85%E5%9B%9B%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E9%95%BF%EF%BC%89.svg" style="width: 7cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.129 </span><span class="caption-text">安装四关节螺栓</span><a class="headerlink" href="#id91" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-<ul class="simple">
-<li><p>将剩余的8颗较短的螺栓放入四关节的螺纹孔中，并使用内六角螺丝刀按对角顺序拧紧螺栓。螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p></li>
-</ul>
-<blockquote>
-<div><figure class="align-center" id="id92">
-<a class="reference internal image-reference" href="_images/安装四关节螺栓（短）.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E5%9B%9B%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E7%9F%AD%EF%BC%89.svg" src="_images/%E5%AE%89%E8%A3%85%E5%9B%9B%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E7%9F%AD%EF%BC%89.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.130 </span><span class="caption-text">安装四关节螺栓</span><a class="headerlink" href="#id92" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p><strong>组装四关节与五关节</strong></p>
-<ul>
-<li><p>将四关节的线束穿过五关节的出线孔，为防止线束端子卡住，推荐先穿过EtherCAT线，再穿过电源线。</p></li>
-<li><p>将四关节法兰面凹槽对准五关节的凸台，使四关节法兰面与五关节贴合。</p>
-<figure class="align-center" id="id93">
-<a class="reference internal image-reference" href="_images/四五关节凸台对齐凹槽.svg"><img alt="_images/%E5%9B%9B%E4%BA%94%E5%85%B3%E8%8A%82%E5%87%B8%E5%8F%B0%E5%AF%B9%E9%BD%90%E5%87%B9%E6%A7%BD.svg" src="_images/%E5%9B%9B%E4%BA%94%E5%85%B3%E8%8A%82%E5%87%B8%E5%8F%B0%E5%AF%B9%E9%BD%90%E5%87%B9%E6%A7%BD.svg" style="width: 13cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.131 </span><span class="caption-text">四五关节凸台对齐凹槽</span><a class="headerlink" href="#id93" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</li>
-<li><p>将径向螺钉定位套放入五关节侧面的4个锥孔内，并将4颗较长的螺栓放入定位套内。</p>
-<figure class="align-center" id="id94">
-<a class="reference internal image-reference" href="_images/五关节放入径向螺钉定位套.svg"><img alt="_images/%E4%BA%94%E5%85%B3%E8%8A%82%E6%94%BE%E5%85%A5%E5%BE%84%E5%90%91%E8%9E%BA%E9%92%89%E5%AE%9A%E4%BD%8D%E5%A5%97.svg" src="_images/%E4%BA%94%E5%85%B3%E8%8A%82%E6%94%BE%E5%85%A5%E5%BE%84%E5%90%91%E8%9E%BA%E9%92%89%E5%AE%9A%E4%BD%8D%E5%A5%97.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.132 </span><span class="caption-text">放入径向螺钉定位套</span><a class="headerlink" href="#id94" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</li>
-<li><p>使用内六角螺丝刀按对角顺序拧紧4颗螺栓。螺栓的规格参考:ref:<cite>关节螺栓规格</cite> 。</p></li>
-</ul>
-<blockquote>
-<div><figure class="align-center" id="id95">
-<a class="reference internal image-reference" href="_images/安装五关节螺栓（长）.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E4%BA%94%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E9%95%BF%EF%BC%89.svg" src="_images/%E5%AE%89%E8%A3%85%E4%BA%94%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E9%95%BF%EF%BC%89.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.133 </span><span class="caption-text">安装五关节螺栓</span><a class="headerlink" href="#id95" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-<ul class="simple">
-<li><p>将剩余的8颗较短的螺栓放入五关节的螺纹孔中，并使用内六角螺丝刀按对角顺序拧紧螺栓。螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p></li>
-</ul>
-<blockquote>
-<div><figure class="align-center" id="id96">
-<a class="reference internal image-reference" href="_images/安装五关节螺栓（短）.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E4%BA%94%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E7%9F%AD%EF%BC%89.svg" src="_images/%E5%AE%89%E8%A3%85%E4%BA%94%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E7%9F%AD%EF%BC%89.svg" style="width: 10cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.134 </span><span class="caption-text">安装五关节螺栓</span><a class="headerlink" href="#id96" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p><strong>线束连接与整理</strong></p>
-<ul class="simple">
-<li><p>在四关节和五关节闷盖侧，将EtherCAT线、红色电源线、黑色电源线连接至四关节和五关节驱动板上对应的接口。接口说明参考 <a class="reference internal" href="#id11"><span class="std std-ref">驱动板接口定义</span></a> 。</p></li>
-<li><p>整理线束并使用扎带将线束成组固定，使用斜口钳将多余扎带齐根剪掉，注意剪扎带时切勿剪到线束。</p></li>
-</ul>
-</li>
-<li><p><strong>安装闷盖</strong></p>
-<ul>
-<li><p>将密封油脂装入针筒内，分别在四关节和五关节闷盖边缘的凹槽里涂抹一圈密封油脂，确保密封油脂涂抹均匀且充满凹槽。</p>
-<blockquote>
-<div><figure class="align-center" id="id97">
-<a class="reference internal image-reference" href="_images/闷盖涂抹油脂.svg"><img alt="_images/%E9%97%B7%E7%9B%96%E6%B6%82%E6%8A%B9%E6%B2%B9%E8%84%82.svg" src="_images/%E9%97%B7%E7%9B%96%E6%B6%82%E6%8A%B9%E6%B2%B9%E8%84%82.svg" style="width: 7cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.135 </span><span class="caption-text">闷盖涂抹油脂</span><a class="headerlink" href="#id97" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>取对应O型圈，将其放入闷盖凹槽中，按压O型圈，使其完全嵌入到凹槽中。</p>
-<blockquote>
-<div><figure class="align-center" id="id98">
-<a class="reference internal image-reference" href="_images/安装O型圈至闷盖.svg"><img alt="_images/%E5%AE%89%E8%A3%85O%E5%9E%8B%E5%9C%88%E8%87%B3%E9%97%B7%E7%9B%96.svg" src="_images/%E5%AE%89%E8%A3%85O%E5%9E%8B%E5%9C%88%E8%87%B3%E9%97%B7%E7%9B%96.svg" style="width: 7cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.136 </span><span class="caption-text">安装O型圈至闷盖</span><a class="headerlink" href="#id98" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>将一个闷盖置于一关节外壳上，使闷盖上的孔对准外壳上的螺纹孔，使用2.5mm内六角螺丝刀拧紧3颗M3内六角螺钉，以固定四关节闷盖。安装闷盖时切勿压到驱动版上的线束。</p>
-<blockquote>
-<div><figure class="align-center" id="id99">
-<a class="reference internal image-reference" href="_images/安装四关节闷盖.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E5%9B%9B%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" src="_images/%E5%AE%89%E8%A3%85%E5%9B%9B%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.137 </span><span class="caption-text">安装四关节闷盖</span><a class="headerlink" href="#id99" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>将另一个闷盖置于一关节外壳上，使闷盖上的孔对准外壳上的螺纹孔，使用2.5mm内六角螺丝刀拧紧3颗M3内六角螺钉，以固定五关节闷盖。安装闷盖时切勿压到驱动版上的线束。</p>
-<blockquote>
-<div><figure class="align-center" id="id100">
-<a class="reference internal image-reference" href="_images/安装五关节闷盖.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E4%BA%94%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" src="_images/%E5%AE%89%E8%A3%85%E4%BA%94%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" style="width: 10cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.138 </span><span class="caption-text">安装五关节闷盖</span><a class="headerlink" href="#id100" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-</ul>
-</li>
-<li><p><strong>安装装饰环</strong></p>
-<ul>
-<li><p>将一个装饰环放入小臂、四关节之间，使其拼接处与关节标定刻线对齐。</p>
-<blockquote>
-<div><figure class="align-center" id="id101">
-<a class="reference internal image-reference" href="_images/固定四关节第一个装饰环.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" src="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.139 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id101" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>使用PH1十字螺丝刀拧紧2颗M3十字螺钉，固定装饰环。</p>
-<blockquote>
-<div><figure class="align-center" id="id102">
-<a class="reference internal image-reference" href="_images/固定四关节第一个装饰环螺钉.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.140 </span><span class="caption-text">固定装饰环螺钉</span><a class="headerlink" href="#id102" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>将另一个装饰环放入小臂、四关节之间，使两个装饰环的卡扣对齐。</p>
-<blockquote>
-<div><figure class="align-center" id="id103">
-<a class="reference internal image-reference" href="_images/固定四关节第二个装饰环.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" src="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.141 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id103" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>使用PH1十字螺丝刀拧紧2颗M3十字螺钉，固定装饰环。</p>
-<blockquote>
-<div><figure class="align-center" id="id104">
-<a class="reference internal image-reference" href="_images/固定四关节第二个装饰环螺钉.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" style="width: 10cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.142 </span><span class="caption-text">固定装饰环螺钉</span><a class="headerlink" href="#id104" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>将一个装饰环放入四、五关节之间，使其拼接处与关节标定刻线对齐。</p>
-<blockquote>
-<div><figure class="align-center" id="id105">
-<a class="reference internal image-reference" href="_images/固定五关节第一个装饰环.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" style="width: 10cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.143 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id105" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>使用PH1十字螺丝刀拧紧2颗M3十字螺钉，固定装饰环。</p>
-<blockquote>
-<div><figure class="align-center" id="id106">
-<a class="reference internal image-reference" href="_images/固定五关节第一个装饰环螺钉.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" style="width: 8cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.144 </span><span class="caption-text">固定装饰环螺钉</span><a class="headerlink" href="#id106" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>将另一个装饰环放入四、五关节之间，使两个装饰环的卡扣对齐。</p>
-<blockquote>
-<div><figure class="align-center" id="id107">
-<a class="reference internal image-reference" href="_images/固定五关节第二个装饰环.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" style="width: 10cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.145 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id107" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-<li><p>使用PH1十字螺丝刀拧紧2颗M3十字螺钉，固定装饰环。</p>
-<blockquote>
-<div><figure class="align-center" id="id108">
-<a class="reference internal image-reference" href="_images/固定五关节第二个装饰环螺钉.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" style="width: 10cm;" />
-</a>
-<figcaption>
-<p><span class="caption-number">图 4.146 </span><span class="caption-text">固定装饰环螺钉</span><a class="headerlink" href="#id108" title="链接到此图片"></a></p>
-</figcaption>
-</figure>
-</div></blockquote>
-</li>
-</ul>
-</li>
-</ul>
-</section>
-</section>
-<section id="zu35">
-<span id="id18"></span><h2><span class="section-number">4.5.5. </span>Zu35更换关节<a class="headerlink" href="#zu35" title="链接到此标题。"></a></h2>
+<p>以更换四关节为例，更换步骤如下，其他关节操作步骤类似：</p>
 <p>拆装关节之前，需准备如下工具：</p>
-<table class="docutils align-default" id="id109">
-<caption><span class="caption-number">表 4.9 </span><span class="caption-text">更换关节工具清单</span><a class="headerlink" href="#id109" title="链接到此表格。"></a></caption>
+<table class="docutils align-default" id="id71">
+<caption><span class="caption-number">表 4.9 </span><span class="caption-text">更换关节工具清单</span><a class="headerlink" href="#id71" title="链接到此表格。"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
 <col style="width: 35.0%" />
@@ -1448,7 +998,518 @@
 <tbody>
 <tr class="row-even"><td><p>1</p></td>
 <td><p>内六角螺丝刀</p></td>
-<td><p>1.5mm，2.5mm，3mm</p></td>
+<td><p>2.5mm，3mm</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>十字螺丝刀</p></td>
+<td><p>PH1</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>O型圈密封油脂</p></td>
+<td><p>MOLYKOTE</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>针筒</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>斜口钳</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>镊子</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>扎带</p></td>
+<td><p>/</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>关节拆卸：</strong></p>
+<ul>
+<li><p><strong>拆卸前准备</strong></p>
+<ul class="simple">
+<li><p>断开电源，并佩戴防静电手环。</p></li>
+<li><p>移动机器人至一个便于拆卸的位置，如有必要，从工作单元上拆下整个机器人，并将其放在固定工作台面上。</p></li>
+</ul>
+</li>
+<li><p><strong>拆卸装饰环</strong></p>
+<ul>
+<li><p>使用PH1十字螺丝刀旋松4颗小臂、四关节之间的装饰环固定的M3十字螺钉，取下两个装饰环。</p>
+<blockquote>
+<div><figure class="align-center" id="id72">
+<a class="reference internal image-reference" href="_images/取下四关节装饰环螺钉.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" src="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" style="width: 7cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.109 </span><span class="caption-text">取下装饰环螺钉</span><a class="headerlink" href="#id72" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id73">
+<a class="reference internal image-reference" href="_images/取下四关节装饰环.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" src="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" style="width: 10cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.110 </span><span class="caption-text">取下装饰环</span><a class="headerlink" href="#id73" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>使用PH1十字螺丝刀旋松4颗四、五关节之间的装饰环固定的M3十字螺钉，取下两个装饰环。</p>
+<blockquote>
+<div><figure class="align-center" id="id74">
+<a class="reference internal image-reference" href="_images/取下五关节装饰环螺钉.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" src="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" style="width: 7cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.111 </span><span class="caption-text">取下装饰环螺钉</span><a class="headerlink" href="#id74" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id75">
+<a class="reference internal image-reference" href="_images/取下五关节装饰环.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" src="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" style="width: 10cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.112 </span><span class="caption-text">取下装饰环</span><a class="headerlink" href="#id75" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>分离四关节与五关节</strong></p>
+<ul>
+<li><p>使用2.5mm内六角螺丝刀旋松3颗固定闷盖的M3内六角螺钉，拆下五关节的闷盖。</p>
+<blockquote>
+<div><figure class="align-center" id="id76">
+<a class="reference internal image-reference" href="_images/取下五关节闷盖.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" src="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" style="width: 10cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.113 </span><span class="caption-text">取下五关节闷盖</span><a class="headerlink" href="#id76" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>使用斜口钳剪断固定EtherCAT线、红色和黑色电源线的扎带。使用镊子将EtherCAT线、红色和黑色电源线的端子拔下。</p></li>
+<li><p>使用内六角螺丝刀旋松并取下固定关节的内六角螺栓和径向螺钉定位套。内六角螺丝刀和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
+<blockquote>
+<div><figure class="align-center" id="id77">
+<a class="reference internal image-reference" href="_images/旋松五关节螺栓.svg"><img alt="_images/%E6%97%8B%E6%9D%BE%E4%BA%94%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93.svg" src="_images/%E6%97%8B%E6%9D%BE%E4%BA%94%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.114 </span><span class="caption-text">旋松五关节螺栓</span><a class="headerlink" href="#id77" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>缓慢将五关节取下，同时将线束从五关节的出线孔逐一抽出，为防止线束端子卡住，推荐先抽出电源线，再抽出EtherCAT线。</p>
+<blockquote>
+<div><figure class="align-center" id="id78">
+<a class="reference internal image-reference" href="_images/取下五关节.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82.svg" src="_images/%E5%8F%96%E4%B8%8B%E4%BA%94%E5%85%B3%E8%8A%82.svg" style="width: 12cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.115 </span><span class="caption-text">取下五关节</span><a class="headerlink" href="#id78" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>分离四关节与小臂</strong></p>
+<ul>
+<li><p>使用2.5mm内六角螺丝刀旋松3颗固定闷盖的M3内六角螺钉，拆下四关节的闷盖。</p>
+<blockquote>
+<div><figure class="align-center" id="id79">
+<a class="reference internal image-reference" href="_images/取下四关节闷盖.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" src="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.116 </span><span class="caption-text">取下四关节闷盖</span><a class="headerlink" href="#id79" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>使用斜口钳剪断固定EtherCAT线、红色和黑色电源线的扎带。</p></li>
+<li><p>使用镊子将EtherCAT线、红色和黑色电源线的端子拔下，此时只需拔下连接至小臂的线束端子，即连接至 <a class="reference internal" href="#id11"><span class="std std-ref">驱动板接口定义</span></a> 中输出接口的线束端子。</p></li>
+<li><p>使用内六角螺丝刀旋松并取下固定关节的内六角螺栓和径向螺钉定位套。内六角螺丝刀和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
+<blockquote>
+<div><figure class="align-center" id="id80">
+<a class="reference internal image-reference" href="_images/旋松四关节螺栓.svg"><img alt="_images/%E6%97%8B%E6%9D%BE%E5%9B%9B%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93.svg" src="_images/%E6%97%8B%E6%9D%BE%E5%9B%9B%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.117 </span><span class="caption-text">旋松四关节螺栓</span><a class="headerlink" href="#id80" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>缓慢将四关节取下，同时将线束从四关节的出线孔逐一抽出，为防止线束端子卡住，推荐先抽出电源线，再抽出EtherCAT线。</p>
+<blockquote>
+<div><figure class="align-center" id="id81">
+<a class="reference internal image-reference" href="_images/取下四关节.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82.svg" src="_images/%E5%8F%96%E4%B8%8B%E5%9B%9B%E5%85%B3%E8%8A%82.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.118 </span><span class="caption-text">取下四关节</span><a class="headerlink" href="#id81" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>取出四关节线束</strong></p>
+<ul>
+<li><p>使用2.5mm内六角螺丝刀旋松并取下1颗固定线圈固定钣金的M3内六角螺钉。</p>
+<blockquote>
+<div><figure class="align-center" id="id82">
+<a class="reference internal image-reference" href="_images/取下线圈固定件螺钉.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E7%BA%BF%E5%9C%88%E5%9B%BA%E5%AE%9A%E4%BB%B6%E8%9E%BA%E9%92%89.svg" src="_images/%E5%8F%96%E4%B8%8B%E7%BA%BF%E5%9C%88%E5%9B%BA%E5%AE%9A%E4%BB%B6%E8%9E%BA%E9%92%89.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.119 </span><span class="caption-text">取下线圈固定件螺钉</span><a class="headerlink" href="#id82" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>将线圈固定件连同关节线束从关节驱动板侧取出。</p>
+<blockquote>
+<div><figure class="align-center" id="id83">
+<a class="reference internal image-reference" href="_images/取出四关节线束.svg"><img alt="_images/%E5%8F%96%E5%87%BA%E5%9B%9B%E5%85%B3%E8%8A%82%E7%BA%BF%E6%9D%9F.svg" src="_images/%E5%8F%96%E5%87%BA%E5%9B%9B%E5%85%B3%E8%8A%82%E7%BA%BF%E6%9D%9F.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.120 </span><span class="caption-text">取出四关节线束</span><a class="headerlink" href="#id83" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>关节安装：</strong></p>
+<ul>
+<li><p><strong>穿入四关节线束</strong></p>
+<ul>
+<li><p>将密封油脂装入针筒内，并将油脂注入新关节法兰面的凹槽内，确保密封油脂涂抹均匀且充满凹槽。</p>
+<blockquote>
+<div><figure class="align-center" id="id84">
+<a class="reference internal image-reference" href="_images/四关节涂抹密封油脂.svg"><img alt="_images/%E5%9B%9B%E5%85%B3%E8%8A%82%E6%B6%82%E6%8A%B9%E5%AF%86%E5%B0%81%E6%B2%B9%E8%84%82.svg" src="_images/%E5%9B%9B%E5%85%B3%E8%8A%82%E6%B6%82%E6%8A%B9%E5%AF%86%E5%B0%81%E6%B2%B9%E8%84%82.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.121 </span><span class="caption-text">四关节涂抹密封油脂</span><a class="headerlink" href="#id84" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>取对应O型圈，将其放入四关节法兰面凹槽中，按压O型圈，使其完全嵌入到凹槽中。</p>
+<blockquote>
+<div><figure class="align-center" id="id85">
+<a class="reference internal image-reference" href="_images/四关节放入O型圈.svg"><img alt="_images/%E5%9B%9B%E5%85%B3%E8%8A%82%E6%94%BE%E5%85%A5O%E5%9E%8B%E5%9C%88.svg" src="_images/%E5%9B%9B%E5%85%B3%E8%8A%82%E6%94%BE%E5%85%A5O%E5%9E%8B%E5%9C%88.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.122 </span><span class="caption-text">四关节放入O型圈</span><a class="headerlink" href="#id85" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>将拆下的线束从四关节驱动板侧的中心孔侧穿过。</p>
+<blockquote>
+<div><figure class="align-center" id="id86">
+<a class="reference internal image-reference" href="_images/穿过四关节线束.svg"><img alt="_images/%E7%A9%BF%E8%BF%87%E5%9B%9B%E5%85%B3%E8%8A%82%E7%BA%BF%E6%9D%9F.svg" src="_images/%E7%A9%BF%E8%BF%87%E5%9B%9B%E5%85%B3%E8%8A%82%E7%BA%BF%E6%9D%9F.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.123 </span><span class="caption-text">穿过四关节线束</span><a class="headerlink" href="#id86" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>将线圈固定钣金置于螺柱上，使用2.5mm内六角螺丝刀拧紧1颗固定线圈固定钣金的M3内六角螺钉。</p>
+<blockquote>
+<div><figure class="align-center" id="id87">
+<a class="reference internal image-reference" href="_images/拧紧线圈固定件螺钉.svg"><img alt="_images/%E6%8B%A7%E7%B4%A7%E7%BA%BF%E5%9C%88%E5%9B%BA%E5%AE%9A%E4%BB%B6%E8%9E%BA%E9%92%89.svg" src="_images/%E6%8B%A7%E7%B4%A7%E7%BA%BF%E5%9C%88%E5%9B%BA%E5%AE%9A%E4%BB%B6%E8%9E%BA%E9%92%89.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.124 </span><span class="caption-text">拧紧线圈固定件螺钉</span><a class="headerlink" href="#id87" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>使用扎带将线圈固定件上方的热缩管扎上，使用斜口钳将多余扎带剪掉，注意剪扎带时切勿剪到线束。</p></li>
+</ul>
+</li>
+<li><p><strong>组装小臂与四关节</strong></p>
+<ul>
+<li><p>将密封油脂装入针筒内，并将油脂注入小臂法兰面的凹槽内，确保密封油脂涂抹均匀且充满凹槽。</p>
+<blockquote>
+<div><figure class="align-center" id="id88">
+<a class="reference internal image-reference" href="_images/小臂涂抹密封油脂.svg"><img alt="_images/%E5%B0%8F%E8%87%82%E6%B6%82%E6%8A%B9%E5%AF%86%E5%B0%81%E6%B2%B9%E8%84%82.svg" src="_images/%E5%B0%8F%E8%87%82%E6%B6%82%E6%8A%B9%E5%AF%86%E5%B0%81%E6%B2%B9%E8%84%82.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.125 </span><span class="caption-text">小臂涂抹密封油脂</span><a class="headerlink" href="#id88" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>取对应O型圈，将其放入小臂法兰面凹槽中，按压O型圈，使其完全嵌入到凹槽中。</p>
+<blockquote>
+<div><figure class="align-center" id="id89">
+<a class="reference internal image-reference" href="_images/小臂放入O型圈.svg"><img alt="_images/%E5%B0%8F%E8%87%82%E6%94%BE%E5%85%A5O%E5%9E%8B%E5%9C%88.svg" src="_images/%E5%B0%8F%E8%87%82%E6%94%BE%E5%85%A5O%E5%9E%8B%E5%9C%88.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.126 </span><span class="caption-text">小臂放入O型圈</span><a class="headerlink" href="#id89" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>将小臂的线束穿过四关节的出线孔，为防止线束端子卡住，推荐先穿过EtherCAT线，再穿过电源线。</p></li>
+<li><p>将小臂法兰面凹槽对准四关节的凸台，使小臂法兰面与四关节贴合。</p>
+<figure class="align-center" id="id90">
+<a class="reference internal image-reference" href="_images/小臂四关节凸台对齐凹槽.svg"><img alt="_images/%E5%B0%8F%E8%87%82%E5%9B%9B%E5%85%B3%E8%8A%82%E5%87%B8%E5%8F%B0%E5%AF%B9%E9%BD%90%E5%87%B9%E6%A7%BD.svg" src="_images/%E5%B0%8F%E8%87%82%E5%9B%9B%E5%85%B3%E8%8A%82%E5%87%B8%E5%8F%B0%E5%AF%B9%E9%BD%90%E5%87%B9%E6%A7%BD.svg" style="width: 15cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.127 </span><span class="caption-text">小臂五关节凸台对齐凹槽</span><a class="headerlink" href="#id90" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>将径向螺钉定位套放入四关节侧面的4个锥孔内。</p>
+<figure class="align-center" id="id91">
+<a class="reference internal image-reference" href="_images/四关节放入径向螺钉定位套.svg"><img alt="_images/%E5%9B%9B%E5%85%B3%E8%8A%82%E6%94%BE%E5%85%A5%E5%BE%84%E5%90%91%E8%9E%BA%E9%92%89%E5%AE%9A%E4%BD%8D%E5%A5%97.svg" src="_images/%E5%9B%9B%E5%85%B3%E8%8A%82%E6%94%BE%E5%85%A5%E5%BE%84%E5%90%91%E8%9E%BA%E9%92%89%E5%AE%9A%E4%BD%8D%E5%A5%97.svg" style="width: 7cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.128 </span><span class="caption-text">放入径向螺钉定位套</span><a class="headerlink" href="#id91" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>将4颗较长的螺栓放入定位套内，使用内六角螺丝刀按对角顺序拧紧4颗螺栓。螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p></li>
+</ul>
+<blockquote>
+<div><figure class="align-center" id="id92">
+<a class="reference internal image-reference" href="_images/安装四关节螺栓（长）.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E5%9B%9B%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E9%95%BF%EF%BC%89.svg" src="_images/%E5%AE%89%E8%A3%85%E5%9B%9B%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E9%95%BF%EF%BC%89.svg" style="width: 7cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.129 </span><span class="caption-text">安装四关节螺栓</span><a class="headerlink" href="#id92" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<ul class="simple">
+<li><p>将剩余的8颗较短的螺栓放入四关节的螺纹孔中，并使用内六角螺丝刀按对角顺序拧紧螺栓。螺栓拧紧顺序参考 <a class="reference internal" href="#id5"><span class="std std-ref">关节螺栓紧固</span></a> ，螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p></li>
+</ul>
+<blockquote>
+<div><figure class="align-center" id="id93">
+<a class="reference internal image-reference" href="_images/安装四关节螺栓（短）.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E5%9B%9B%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E7%9F%AD%EF%BC%89.svg" src="_images/%E5%AE%89%E8%A3%85%E5%9B%9B%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E7%9F%AD%EF%BC%89.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.130 </span><span class="caption-text">安装四关节螺栓</span><a class="headerlink" href="#id93" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p><strong>组装四关节与五关节</strong></p>
+<ul>
+<li><p>将四关节的线束穿过五关节的出线孔，为防止线束端子卡住，推荐先穿过EtherCAT线，再穿过电源线。</p></li>
+<li><p>将四关节法兰面凹槽对准五关节的凸台，使四关节法兰面与五关节贴合。</p>
+<figure class="align-center" id="id94">
+<a class="reference internal image-reference" href="_images/四五关节凸台对齐凹槽.svg"><img alt="_images/%E5%9B%9B%E4%BA%94%E5%85%B3%E8%8A%82%E5%87%B8%E5%8F%B0%E5%AF%B9%E9%BD%90%E5%87%B9%E6%A7%BD.svg" src="_images/%E5%9B%9B%E4%BA%94%E5%85%B3%E8%8A%82%E5%87%B8%E5%8F%B0%E5%AF%B9%E9%BD%90%E5%87%B9%E6%A7%BD.svg" style="width: 13cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.131 </span><span class="caption-text">四五关节凸台对齐凹槽</span><a class="headerlink" href="#id94" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>将径向螺钉定位套放入五关节侧面的4个锥孔内。</p>
+<figure class="align-center" id="id95">
+<a class="reference internal image-reference" href="_images/五关节放入径向螺钉定位套.svg"><img alt="_images/%E4%BA%94%E5%85%B3%E8%8A%82%E6%94%BE%E5%85%A5%E5%BE%84%E5%90%91%E8%9E%BA%E9%92%89%E5%AE%9A%E4%BD%8D%E5%A5%97.svg" src="_images/%E4%BA%94%E5%85%B3%E8%8A%82%E6%94%BE%E5%85%A5%E5%BE%84%E5%90%91%E8%9E%BA%E9%92%89%E5%AE%9A%E4%BD%8D%E5%A5%97.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.132 </span><span class="caption-text">放入径向螺钉定位套</span><a class="headerlink" href="#id95" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>将4颗较长的螺栓放入定位套内，使用内六角螺丝刀按对角顺序拧紧4颗螺栓。螺栓的规格参考:ref:<cite>关节螺栓规格</cite> 。</p></li>
+</ul>
+<blockquote>
+<div><figure class="align-center" id="id96">
+<a class="reference internal image-reference" href="_images/安装五关节螺栓（长）.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E4%BA%94%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E9%95%BF%EF%BC%89.svg" src="_images/%E5%AE%89%E8%A3%85%E4%BA%94%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E9%95%BF%EF%BC%89.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.133 </span><span class="caption-text">安装五关节螺栓</span><a class="headerlink" href="#id96" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<ul class="simple">
+<li><p>将剩余的8颗较短的螺栓放入五关节的螺纹孔中，并使用内六角螺丝刀按对角顺序拧紧螺栓。螺栓拧紧顺序参考 <a class="reference internal" href="#id5"><span class="std std-ref">关节螺栓紧固</span></a> ，螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p></li>
+</ul>
+<blockquote>
+<div><figure class="align-center" id="id97">
+<a class="reference internal image-reference" href="_images/安装五关节螺栓（短）.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E4%BA%94%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E7%9F%AD%EF%BC%89.svg" src="_images/%E5%AE%89%E8%A3%85%E4%BA%94%E5%85%B3%E8%8A%82%E8%9E%BA%E6%A0%93%EF%BC%88%E7%9F%AD%EF%BC%89.svg" style="width: 10cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.134 </span><span class="caption-text">安装五关节螺栓</span><a class="headerlink" href="#id97" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p><strong>线束连接与整理</strong></p>
+<ul class="simple">
+<li><p>在四关节和五关节闷盖侧，将EtherCAT线、红色电源线、黑色电源线连接至四关节和五关节驱动板上对应的接口。接口说明参考 <a class="reference internal" href="#id11"><span class="std std-ref">驱动板接口定义</span></a> 。</p></li>
+<li><p>整理线束并使用扎带将线束成组固定，使用斜口钳将多余扎带齐根剪掉，注意剪扎带时切勿剪到线束。</p></li>
+</ul>
+</li>
+<li><p><strong>安装闷盖</strong></p>
+<ul>
+<li><p>将密封油脂装入针筒内，分别在四关节和五关节闷盖边缘的凹槽里涂抹一圈密封油脂，确保密封油脂涂抹均匀且充满凹槽。</p>
+<blockquote>
+<div><figure class="align-center" id="id98">
+<a class="reference internal image-reference" href="_images/闷盖涂抹油脂.svg"><img alt="_images/%E9%97%B7%E7%9B%96%E6%B6%82%E6%8A%B9%E6%B2%B9%E8%84%82.svg" src="_images/%E9%97%B7%E7%9B%96%E6%B6%82%E6%8A%B9%E6%B2%B9%E8%84%82.svg" style="width: 7cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.135 </span><span class="caption-text">闷盖涂抹油脂</span><a class="headerlink" href="#id98" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>取对应O型圈，将其放入闷盖凹槽中，按压O型圈，使其完全嵌入到凹槽中。</p>
+<blockquote>
+<div><figure class="align-center" id="id99">
+<a class="reference internal image-reference" href="_images/安装O型圈至闷盖.svg"><img alt="_images/%E5%AE%89%E8%A3%85O%E5%9E%8B%E5%9C%88%E8%87%B3%E9%97%B7%E7%9B%96.svg" src="_images/%E5%AE%89%E8%A3%85O%E5%9E%8B%E5%9C%88%E8%87%B3%E9%97%B7%E7%9B%96.svg" style="width: 7cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.136 </span><span class="caption-text">安装O型圈至闷盖</span><a class="headerlink" href="#id99" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>将一个闷盖置于四关节外壳上，使闷盖上的孔对准关节外壳上的螺纹孔，使用2.5mm内六角螺丝刀拧紧3颗M3内六角螺钉，以固定四关节闷盖。安装闷盖时切勿压到驱动版上的线束。</p>
+<blockquote>
+<div><figure class="align-center" id="id100">
+<a class="reference internal image-reference" href="_images/安装四关节闷盖.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E5%9B%9B%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" src="_images/%E5%AE%89%E8%A3%85%E5%9B%9B%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.137 </span><span class="caption-text">安装四关节闷盖</span><a class="headerlink" href="#id100" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>将另一个闷盖置于五关节外壳上，使闷盖上的孔对准关节外壳上的螺纹孔，使用2.5mm内六角螺丝刀拧紧3颗M3内六角螺钉，以固定五关节闷盖。安装闷盖时切勿压到驱动版上的线束。</p>
+<blockquote>
+<div><figure class="align-center" id="id101">
+<a class="reference internal image-reference" href="_images/安装五关节闷盖.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E4%BA%94%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" src="_images/%E5%AE%89%E8%A3%85%E4%BA%94%E5%85%B3%E8%8A%82%E9%97%B7%E7%9B%96.svg" style="width: 10cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.138 </span><span class="caption-text">安装五关节闷盖</span><a class="headerlink" href="#id101" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>安装装饰环</strong></p>
+<ul>
+<li><p>将一个装饰环放入小臂、四关节之间，使其拼接处与关节标定刻线对齐。</p>
+<blockquote>
+<div><figure class="align-center" id="id102">
+<a class="reference internal image-reference" href="_images/固定四关节第一个装饰环.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" src="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.139 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id102" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>使用PH1十字螺丝刀拧紧2颗M3十字螺钉，固定装饰环。</p>
+<blockquote>
+<div><figure class="align-center" id="id103">
+<a class="reference internal image-reference" href="_images/固定四关节第一个装饰环螺钉.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.140 </span><span class="caption-text">固定装饰环螺钉</span><a class="headerlink" href="#id103" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>将另一个装饰环放入小臂、四关节之间，使两个装饰环的卡扣对齐。</p>
+<blockquote>
+<div><figure class="align-center" id="id104">
+<a class="reference internal image-reference" href="_images/固定四关节第二个装饰环.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" src="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.141 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id104" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>使用PH1十字螺丝刀拧紧2颗M3十字螺钉，固定装饰环。</p>
+<blockquote>
+<div><figure class="align-center" id="id105">
+<a class="reference internal image-reference" href="_images/固定四关节第二个装饰环螺钉.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E5%9B%9B%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" style="width: 10cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.142 </span><span class="caption-text">固定装饰环螺钉</span><a class="headerlink" href="#id105" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>将一个装饰环放入四、五关节之间，使其拼接处与关节标定刻线对齐。</p>
+<blockquote>
+<div><figure class="align-center" id="id106">
+<a class="reference internal image-reference" href="_images/固定五关节第一个装饰环.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" style="width: 10cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.143 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id106" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>使用PH1十字螺丝刀拧紧2颗M3十字螺钉，固定装饰环。</p>
+<blockquote>
+<div><figure class="align-center" id="id107">
+<a class="reference internal image-reference" href="_images/固定五关节第一个装饰环螺钉.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" style="width: 8cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.144 </span><span class="caption-text">固定装饰环螺钉</span><a class="headerlink" href="#id107" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>将另一个装饰环放入四、五关节之间，使两个装饰环的卡扣对齐。</p>
+<blockquote>
+<div><figure class="align-center" id="id108">
+<a class="reference internal image-reference" href="_images/固定五关节第二个装饰环.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF.svg" style="width: 10cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.145 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id108" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+<li><p>使用PH1十字螺丝刀拧紧2颗M3十字螺钉，固定装饰环。</p>
+<blockquote>
+<div><figure class="align-center" id="id109">
+<a class="reference internal image-reference" href="_images/固定五关节第二个装饰环螺钉.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%BA%94%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89.svg" style="width: 10cm;" />
+</a>
+<figcaption>
+<p><span class="caption-number">图 4.146 </span><span class="caption-text">固定装饰环螺钉</span><a class="headerlink" href="#id109" title="链接到此图片"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="zu35">
+<span id="id18"></span><h2><span class="section-number">4.5.5. </span>Zu35更换关节<a class="headerlink" href="#zu35" title="链接到此标题。"></a></h2>
+<p>拆装关节之前，需准备如下工具：</p>
+<table class="docutils align-default" id="id110">
+<caption><span class="caption-number">表 4.10 </span><span class="caption-text">更换关节工具清单</span><a class="headerlink" href="#id110" title="链接到此表格。"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 35.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>序号</strong></p></th>
+<th class="head"><p><strong>名称</strong></p></th>
+<th class="head"><p><strong>规格</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>内六角螺丝刀</p></td>
+<td><p>2.5mm</p></td>
 </tr>
 <tr class="row-odd"><td><p>2</p></td>
 <td><p>十字螺丝刀</p></td>
@@ -1486,43 +1547,43 @@
 <li><p><strong>拆卸前准备</strong></p>
 <ul class="simple">
 <li><p>断开电源，并佩戴防静电手环。</p></li>
-<li><p>使用吊起设备将机器人移动至一个便于拆卸的位置，如有必要，从工作单元上拆下整个机械手臂，并将其放在固定工作台面上。</p></li>
+<li><p>使用吊起设备将机器人移动至一个便于拆卸的位置，如有必要，从工作单元上拆下整个机器人，并将其放在固定工作台面上。</p></li>
 </ul>
 </li>
 <li><p><strong>拆卸装饰环</strong></p>
 <ul>
 <li><p>使用PH1十字螺丝刀旋松4颗一、二关节之间的装饰环固定的M3十字螺钉，取下两个装饰环。</p>
 <blockquote>
-<div><figure class="align-center" id="id110">
+<div><figure class="align-center" id="id111">
 <a class="reference internal image-reference" href="_images/取下一关节装饰环螺钉(Zu35).svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E4%B8%80%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89%28Zu35%29.svg" src="_images/%E5%8F%96%E4%B8%8B%E4%B8%80%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89%28Zu35%29.svg" style="width: 6cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.147 </span><span class="caption-text">取下装饰环螺钉</span><a class="headerlink" href="#id110" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.147 </span><span class="caption-text">取下装饰环螺钉</span><a class="headerlink" href="#id111" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id111">
+<figure class="align-center" id="id112">
 <a class="reference internal image-reference" href="_images/取下一关节装饰环(Zu35).svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E4%B8%80%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%28Zu35%29.svg" src="_images/%E5%8F%96%E4%B8%8B%E4%B8%80%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%28Zu35%29.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.148 </span><span class="caption-text">取下装饰环</span><a class="headerlink" href="#id111" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.148 </span><span class="caption-text">取下装饰环</span><a class="headerlink" href="#id112" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>使用PH1十字螺丝刀旋松4颗大臂、二关节之间的装饰环固定的M3十字螺钉，取下两个装饰环。</p>
 <blockquote>
-<div><figure class="align-center" id="id112">
+<div><figure class="align-center" id="id113">
 <a class="reference internal image-reference" href="_images/取下二关节装饰环螺钉(Zu35).svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E4%BA%8C%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89%28Zu35%29.svg" src="_images/%E5%8F%96%E4%B8%8B%E4%BA%8C%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89%28Zu35%29.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.149 </span><span class="caption-text">取下装饰环螺钉</span><a class="headerlink" href="#id112" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.149 </span><span class="caption-text">取下装饰环螺钉</span><a class="headerlink" href="#id113" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id113">
+<figure class="align-center" id="id114">
 <a class="reference internal image-reference" href="_images/取下二关节装饰环(Zu35).svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E4%BA%8C%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%28Zu35%29.svg" src="_images/%E5%8F%96%E4%B8%8B%E4%BA%8C%E5%85%B3%E8%8A%82%E8%A3%85%E9%A5%B0%E7%8E%AF%28Zu35%29.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.150 </span><span class="caption-text">取下装饰环</span><a class="headerlink" href="#id113" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.150 </span><span class="caption-text">取下装饰环</span><a class="headerlink" href="#id114" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -1531,44 +1592,43 @@
 </li>
 <li><p><strong>分离大臂与二关节</strong></p>
 <ul>
-<li><p>使用2.5mm内六角螺丝刀旋松3颗固定闷盖的M3内六角螺钉，拆下二关节的闷盖。</p>
+<li><p>使用2.5mm内六角螺丝刀旋松6颗固定闷盖的M3内六角螺钉，拆下二关节的闷盖。</p>
 <blockquote>
-<div><figure class="align-center" id="id114">
+<div><figure class="align-center" id="id115">
 <a class="reference internal image-reference" href="_images/取下闷盖螺钉（Zu35）.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E9%97%B7%E7%9B%96%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%8F%96%E4%B8%8B%E9%97%B7%E7%9B%96%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.151 </span><span class="caption-text">取下闷盖螺钉</span><a class="headerlink" href="#id114" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.151 </span><span class="caption-text">取下闷盖螺钉</span><a class="headerlink" href="#id115" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id115">
+<figure class="align-center" id="id116">
 <a class="reference internal image-reference" href="_images/取下闷盖（Zu35）.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E9%97%B7%E7%9B%96%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%8F%96%E4%B8%8B%E9%97%B7%E7%9B%96%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.152 </span><span class="caption-text">取下闷盖</span><a class="headerlink" href="#id115" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.152 </span><span class="caption-text">取下闷盖</span><a class="headerlink" href="#id116" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
-<li><p>使用斜口钳剪断固定EtherCAT线、红色和黑色电源线的扎带。</p></li>
-<li><p>使用镊子将EtherCAT线、红色和黑色电源线的端子拔下，拆卸关节时只需拔下穿过二关节出线孔的连接线端子。</p></li>
+<li><p>使用斜口钳剪断固定EtherCAT线、红色和黑色电源线的扎带。使用镊子将EtherCAT线、红色和黑色电源线的端子拔下。</p></li>
 <li><p>使用开口扳手旋松并取下固定关节的外六角螺栓和垫片。扳手和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
 <blockquote>
-<div><figure class="align-center" id="id116">
+<div><figure class="align-center" id="id117">
 <a class="reference internal image-reference" href="_images/旋松二关节螺钉（Zu35）.svg"><img alt="_images/%E6%97%8B%E6%9D%BE%E4%BA%8C%E5%85%B3%E8%8A%82%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E6%97%8B%E6%9D%BE%E4%BA%8C%E5%85%B3%E8%8A%82%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" style="width: 7cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.153 </span><span class="caption-text">旋松二关节螺钉</span><a class="headerlink" href="#id116" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.153 </span><span class="caption-text">旋松二关节螺钉</span><a class="headerlink" href="#id117" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>缓慢将大臂取下，同时将线束从二关节的出线孔逐一抽出，为防止线束端子卡住，推荐先抽出电源线，再抽出EtherCAT线。</p>
 <blockquote>
-<div><figure class="align-center" id="id117">
+<div><figure class="align-center" id="id118">
 <a class="reference internal image-reference" href="_images/分离大臂（Zu35）.svg"><img alt="_images/%E5%88%86%E7%A6%BB%E5%A4%A7%E8%87%82%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%88%86%E7%A6%BB%E5%A4%A7%E8%87%82%EF%BC%88Zu35%EF%BC%89.svg" style="width: 10cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.154 </span><span class="caption-text">分离大臂</span><a class="headerlink" href="#id117" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.154 </span><span class="caption-text">分离大臂</span><a class="headerlink" href="#id118" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -1577,48 +1637,48 @@
 </li>
 <li><p><strong>分离一关节与二关节</strong></p>
 <ul>
-<li><p>使用2.5mm内六角螺丝刀旋松3颗固定环形灯壳的M3内六角螺钉。</p>
+<li><p>使用2.5mm内六角螺丝刀旋松6颗固定环形灯壳的M3内六角螺钉。</p>
 <blockquote>
-<div><figure class="align-center" id="id118">
+<div><figure class="align-center" id="id119">
 <a class="reference internal image-reference" href="_images/取下环形灯壳螺钉（Zu35）.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%8F%96%E4%B8%8B%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.155 </span><span class="caption-text">取下环形灯壳螺钉</span><a class="headerlink" href="#id118" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.155 </span><span class="caption-text">取下环形灯壳螺钉</span><a class="headerlink" href="#id119" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
-<li><p>使用镊子拔下连接至环形灯壳内灯板上的端子，取下一关节的环形灯壳。</p>
+<li><p>使用镊子拔下环形灯壳内灯板上的环形灯线端子，取下一关节的环形灯壳。</p>
 <blockquote>
-<div><figure class="align-center" id="id119">
+<div><figure class="align-center" id="id120">
 <a class="reference internal image-reference" href="_images/取下环形灯壳（Zu35）.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%8F%96%E4%B8%8B%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.156 </span><span class="caption-text">取下环形灯壳</span><a class="headerlink" href="#id119" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.156 </span><span class="caption-text">取下环形灯壳</span><a class="headerlink" href="#id120" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>使用斜口钳剪断固定EtherCAT线、红色和黑色电源线的扎带。</p></li>
-<li><p>使用镊子将EtherCAT线、红色和黑色电源线的端子拔下，拆卸关节时只需拔下穿过一关节出线孔的连接线端子。</p></li>
+<li><p>使用镊子将EtherCAT线、红色和黑色电源线的端子拔下，此时只需拔下连接至二关节的线束端子，即连接至 <a class="reference internal" href="#id11"><span class="std std-ref">驱动板接口定义</span></a> 中输出接口的线束端子。</p></li>
 <li><p>使用开口扳手旋松并取下固定关节的外六角螺栓和垫片。扳手和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
 <blockquote>
-<div><figure class="align-center" id="id120">
+<div><figure class="align-center" id="id121">
 <a class="reference internal image-reference" href="_images/旋松一关节螺钉（Zu35）.svg"><img alt="_images/%E6%97%8B%E6%9D%BE%E4%B8%80%E5%85%B3%E8%8A%82%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E6%97%8B%E6%9D%BE%E4%B8%80%E5%85%B3%E8%8A%82%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" style="width: 7cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.157 </span><span class="caption-text">旋松一关节螺钉</span><a class="headerlink" href="#id120" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.157 </span><span class="caption-text">旋松一关节螺钉</span><a class="headerlink" href="#id121" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>缓慢将二关节取下，同时将线束从一关节的出线孔逐一抽出，为防止线束端子卡住，推荐先抽出电源线，再抽出EtherCAT线。</p>
 <blockquote>
-<div><figure class="align-center" id="id121">
+<div><figure class="align-center" id="id122">
 <a class="reference internal image-reference" href="_images/分离二关节（Zu35）.svg"><img alt="_images/%E5%88%86%E7%A6%BB%E4%BA%8C%E5%85%B3%E8%8A%82%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%88%86%E7%A6%BB%E4%BA%8C%E5%85%B3%E8%8A%82%EF%BC%88Zu35%EF%BC%89.svg" style="width: 10cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.158 </span><span class="caption-text">分离二关节</span><a class="headerlink" href="#id121" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.158 </span><span class="caption-text">分离二关节</span><a class="headerlink" href="#id122" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -1627,32 +1687,31 @@
 </li>
 <li><p><strong>取出二关节线束</strong></p>
 <ul>
-<li><p>拔下二关节驱动板上的线束端子。</p></li>
 <li><p>使用2.5mm内六角螺丝刀旋松1颗固定线圈固定钣金的M3内六角螺钉，依次将线圈固定件和线圈固定钣金穿过关节线束并取下。</p>
 <blockquote>
-<div><figure class="align-center" id="id122">
+<div><figure class="align-center" id="id123">
 <a class="reference internal image-reference" href="_images/取下线圈固定件（Zu35）.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E7%BA%BF%E5%9C%88%E5%9B%BA%E5%AE%9A%E4%BB%B6%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%8F%96%E4%B8%8B%E7%BA%BF%E5%9C%88%E5%9B%BA%E5%AE%9A%E4%BB%B6%EF%BC%88Zu35%EF%BC%89.svg" style="width: 6cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.159 </span><span class="caption-text">取下线圈固定件</span><a class="headerlink" href="#id122" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.159 </span><span class="caption-text">取下线圈固定件</span><a class="headerlink" href="#id123" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>使用2.5mm内六角螺丝刀旋松1颗固定法兰固线钣金的M3内六角螺钉，将线束从二关节法兰中心孔抽出。</p>
 <blockquote>
-<div><figure class="align-center" id="id123">
+<div><figure class="align-center" id="id124">
 <a class="reference internal image-reference" href="_images/取下法兰固线钣金螺钉（Zu35）.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E6%B3%95%E5%85%B0%E5%9B%BA%E7%BA%BF%E9%92%A3%E9%87%91%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%8F%96%E4%B8%8B%E6%B3%95%E5%85%B0%E5%9B%BA%E7%BA%BF%E9%92%A3%E9%87%91%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.160 </span><span class="caption-text">取下法兰固线钣金螺钉</span><a class="headerlink" href="#id123" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.160 </span><span class="caption-text">取下法兰固线钣金螺钉</span><a class="headerlink" href="#id124" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id124">
+<figure class="align-center" id="id125">
 <a class="reference internal image-reference" href="_images/取下线束.svg"><img alt="_images/%E5%8F%96%E4%B8%8B%E7%BA%BF%E6%9D%9F.svg" src="_images/%E5%8F%96%E4%B8%8B%E7%BA%BF%E6%9D%9F.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.161 </span><span class="caption-text">取下线束</span><a class="headerlink" href="#id124" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.161 </span><span class="caption-text">取下线束</span><a class="headerlink" href="#id125" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -1666,55 +1725,55 @@
 <ul>
 <li><p>将密封油脂装入针筒内，并将油脂注入新关节法兰面的凹槽内，确保密封油脂涂抹均匀且充满凹槽。</p>
 <blockquote>
-<div><figure class="align-center" id="id125">
+<div><figure class="align-center" id="id126">
 <a class="reference internal image-reference" href="_images/二关节涂抹密封油脂.svg"><img alt="_images/%E4%BA%8C%E5%85%B3%E8%8A%82%E6%B6%82%E6%8A%B9%E5%AF%86%E5%B0%81%E6%B2%B9%E8%84%82.svg" src="_images/%E4%BA%8C%E5%85%B3%E8%8A%82%E6%B6%82%E6%8A%B9%E5%AF%86%E5%B0%81%E6%B2%B9%E8%84%82.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.162 </span><span class="caption-text">二关节涂抹密封油脂</span><a class="headerlink" href="#id125" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.162 </span><span class="caption-text">二关节涂抹密封油脂</span><a class="headerlink" href="#id126" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>取对应O型圈，将其放入二关节法兰面凹槽中，按压O型圈，使其完全嵌入到凹槽中。</p>
 <blockquote>
-<div><figure class="align-center" id="id126">
+<div><figure class="align-center" id="id127">
 <a class="reference internal image-reference" href="_images/二关节放入O型圈.svg"><img alt="_images/%E4%BA%8C%E5%85%B3%E8%8A%82%E6%94%BE%E5%85%A5O%E5%9E%8B%E5%9C%88.svg" src="_images/%E4%BA%8C%E5%85%B3%E8%8A%82%E6%94%BE%E5%85%A5O%E5%9E%8B%E5%9C%88.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.163 </span><span class="caption-text">二关节放入O型圈</span><a class="headerlink" href="#id126" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.163 </span><span class="caption-text">二关节放入O型圈</span><a class="headerlink" href="#id127" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>将拆下的线束从二关节法兰面的中心孔侧穿过。</p>
 <blockquote>
-<div><figure class="align-center" id="id127">
+<div><figure class="align-center" id="id128">
 <a class="reference internal image-reference" href="_images/穿过线束.svg"><img alt="_images/%E7%A9%BF%E8%BF%87%E7%BA%BF%E6%9D%9F.svg" src="_images/%E7%A9%BF%E8%BF%87%E7%BA%BF%E6%9D%9F.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.164 </span><span class="caption-text">穿过线束</span><a class="headerlink" href="#id127" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.164 </span><span class="caption-text">穿过线束</span><a class="headerlink" href="#id128" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>使用2.5mm内六角螺丝刀拧紧1颗固定法兰固线钣金的M3内六角螺钉。</p>
 <blockquote>
-<div><figure class="align-center" id="id128">
+<div><figure class="align-center" id="id129">
 <a class="reference internal image-reference" href="_images/安装法兰固线钣金螺钉（Zu35）.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E6%B3%95%E5%85%B0%E5%9B%BA%E7%BA%BF%E9%92%A3%E9%87%91%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%AE%89%E8%A3%85%E6%B3%95%E5%85%B0%E5%9B%BA%E7%BA%BF%E9%92%A3%E9%87%91%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.165 </span><span class="caption-text">安装法兰固线钣金螺钉</span><a class="headerlink" href="#id128" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.165 </span><span class="caption-text">安装法兰固线钣金螺钉</span><a class="headerlink" href="#id129" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>将线圈固定件套在线束热缩管上，并将线圈固定钣金置于散热器上的钣金安装位置上。将1颗M3内六角螺钉置于线圈固定钣金上，使用2.5mm内六角螺丝刀拧紧这颗螺钉。</p>
 <blockquote>
-<div><figure class="align-center" id="id129">
+<div><figure class="align-center" id="id130">
 <a class="reference internal image-reference" href="_images/安装线圈固定件（Zu35）.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E7%BA%BF%E5%9C%88%E5%9B%BA%E5%AE%9A%E4%BB%B6%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%AE%89%E8%A3%85%E7%BA%BF%E5%9C%88%E5%9B%BA%E5%AE%9A%E4%BB%B6%EF%BC%88Zu35%EF%BC%89.svg" style="width: 6cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.166 </span><span class="caption-text">安装线圈固定件</span><a class="headerlink" href="#id129" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.166 </span><span class="caption-text">安装线圈固定件</span><a class="headerlink" href="#id130" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -1727,22 +1786,22 @@
 <li><p>将二关节的线束穿过一关节的出线孔，为防止线束端子卡住，推荐先穿过EtherCAT线，再穿过电源线。</p></li>
 <li><p>将二关节法兰面的凹槽对准一关节的凸台，使二关节法兰面与一关节贴合。</p>
 <blockquote>
-<div><figure class="align-center" id="id130">
+<div><figure class="align-center" id="id131">
 <a class="reference internal image-reference" href="_images/一二关节凸台对齐凹槽（Zu35）.svg"><img alt="_images/%E4%B8%80%E4%BA%8C%E5%85%B3%E8%8A%82%E5%87%B8%E5%8F%B0%E5%AF%B9%E9%BD%90%E5%87%B9%E6%A7%BD%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E4%B8%80%E4%BA%8C%E5%85%B3%E8%8A%82%E5%87%B8%E5%8F%B0%E5%AF%B9%E9%BD%90%E5%87%B9%E6%A7%BD%EF%BC%88Zu35%EF%BC%89.svg" style="width: 16cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.167 </span><span class="caption-text">一二关节凸台对齐凹槽</span><a class="headerlink" href="#id130" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.167 </span><span class="caption-text">一二关节凸台对齐凹槽</span><a class="headerlink" href="#id131" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
-<li><p>将固定关节的外六角螺栓和垫片放入一关节的螺纹孔中，并使用开口扳手按对角顺序拧紧螺栓。扳手和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
+<li><p>将固定关节的外六角螺栓和垫片放入一关节的螺纹孔中，并使用开口扳手按对角顺序拧紧螺栓。螺栓拧紧顺序参考 <a class="reference internal" href="#id5"><span class="std std-ref">关节螺栓紧固</span></a> ，扳手和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
 <blockquote>
-<div><figure class="align-center" id="id131">
+<div><figure class="align-center" id="id132">
 <a class="reference internal image-reference" href="_images/拧紧一关节螺钉（Zu35）.svg"><img alt="_images/%E6%8B%A7%E7%B4%A7%E4%B8%80%E5%85%B3%E8%8A%82%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E6%8B%A7%E7%B4%A7%E4%B8%80%E5%85%B3%E8%8A%82%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.168 </span><span class="caption-text">拧紧一关节螺钉</span><a class="headerlink" href="#id131" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.168 </span><span class="caption-text">拧紧一关节螺钉</span><a class="headerlink" href="#id132" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -1753,22 +1812,22 @@
 <ul>
 <li><p>将密封油脂装入针筒内，并将油脂注入大臂法兰面的凹槽内，确保密封油脂涂抹均匀且充满凹槽。</p>
 <blockquote>
-<div><figure class="align-center" id="id132">
+<div><figure class="align-center" id="id133">
 <a class="reference internal image-reference" href="_images/大臂涂抹密封油脂.svg"><img alt="_images/%E5%A4%A7%E8%87%82%E6%B6%82%E6%8A%B9%E5%AF%86%E5%B0%81%E6%B2%B9%E8%84%82.svg" src="_images/%E5%A4%A7%E8%87%82%E6%B6%82%E6%8A%B9%E5%AF%86%E5%B0%81%E6%B2%B9%E8%84%82.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.169 </span><span class="caption-text">大臂涂抹密封油脂</span><a class="headerlink" href="#id132" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.169 </span><span class="caption-text">大臂涂抹密封油脂</span><a class="headerlink" href="#id133" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>取对应O型圈，将其放入大臂法兰面凹槽中，按压O型圈，使其完全嵌入到凹槽中。</p>
 <blockquote>
-<div><figure class="align-center" id="id133">
+<div><figure class="align-center" id="id134">
 <a class="reference internal image-reference" href="_images/大臂放入O型圈.svg"><img alt="_images/%E5%A4%A7%E8%87%82%E6%94%BE%E5%85%A5O%E5%9E%8B%E5%9C%88.svg" src="_images/%E5%A4%A7%E8%87%82%E6%94%BE%E5%85%A5O%E5%9E%8B%E5%9C%88.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.170 </span><span class="caption-text">大臂放入O型圈</span><a class="headerlink" href="#id133" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.170 </span><span class="caption-text">大臂放入O型圈</span><a class="headerlink" href="#id134" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -1776,22 +1835,22 @@
 <li><p>将大臂的线束穿过二关节的出线孔，为防止线束端子卡住，推荐先穿过EtherCAT线，再穿过电源线。</p></li>
 <li><p>将大臂法兰面凹槽对准二关节的凸台，使大臂法兰面与二关节贴合。</p>
 <blockquote>
-<div><figure class="align-center" id="id134">
+<div><figure class="align-center" id="id135">
 <a class="reference internal image-reference" href="_images/二关节大臂凸台对齐凹槽（Zu35）.svg"><img alt="_images/%E4%BA%8C%E5%85%B3%E8%8A%82%E5%A4%A7%E8%87%82%E5%87%B8%E5%8F%B0%E5%AF%B9%E9%BD%90%E5%87%B9%E6%A7%BD%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E4%BA%8C%E5%85%B3%E8%8A%82%E5%A4%A7%E8%87%82%E5%87%B8%E5%8F%B0%E5%AF%B9%E9%BD%90%E5%87%B9%E6%A7%BD%EF%BC%88Zu35%EF%BC%89.svg" style="width: 15cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.171 </span><span class="caption-text">二关节大臂凸台对齐凹槽</span><a class="headerlink" href="#id134" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.171 </span><span class="caption-text">二关节大臂凸台对齐凹槽</span><a class="headerlink" href="#id135" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>将固定关节的外六角螺栓和垫片放入二关节的螺纹孔中，并使用开口扳手按对角顺序拧紧螺栓。扳手和螺栓的规格参考 <a class="reference internal" href="#id9"><span class="std std-ref">关节螺栓规格</span></a> 。</p>
 <blockquote>
-<div><figure class="align-center" id="id135">
+<div><figure class="align-center" id="id136">
 <a class="reference internal image-reference" href="_images/拧紧二关节螺钉（Zu35）.svg"><img alt="_images/%E6%8B%A7%E7%B4%A7%E4%BA%8C%E5%85%B3%E8%8A%82%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E6%8B%A7%E7%B4%A7%E4%BA%8C%E5%85%B3%E8%8A%82%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.172 </span><span class="caption-text">拧紧二关节螺钉</span><a class="headerlink" href="#id135" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.172 </span><span class="caption-text">拧紧二关节螺钉</span><a class="headerlink" href="#id136" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -1809,11 +1868,11 @@
 <li><p>将密封油脂装入针筒内，在闷盖边缘的凹槽里涂抹一圈密封油脂，确保密封油脂涂抹均匀且充满凹槽。</p></li>
 </ul>
 <blockquote>
-<div><figure class="align-center" id="id136">
+<div><figure class="align-center" id="id137">
 <a class="reference internal image-reference" href="_images/闷盖涂抹油脂.svg"><img alt="_images/%E9%97%B7%E7%9B%96%E6%B6%82%E6%8A%B9%E6%B2%B9%E8%84%82.svg" src="_images/%E9%97%B7%E7%9B%96%E6%B6%82%E6%8A%B9%E6%B2%B9%E8%84%82.svg" style="width: 7cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.173 </span><span class="caption-text">闷盖涂抹油脂</span><a class="headerlink" href="#id136" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.173 </span><span class="caption-text">闷盖涂抹油脂</span><a class="headerlink" href="#id137" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -1821,11 +1880,11 @@
 <li><p>取对应O型圈，将其放入闷盖凹槽中，按压O型圈，使其完全嵌入到凹槽中。</p></li>
 </ul>
 <blockquote>
-<div><figure class="align-center" id="id137">
+<div><figure class="align-center" id="id138">
 <a class="reference internal image-reference" href="_images/安装O型圈至闷盖.svg"><img alt="_images/%E5%AE%89%E8%A3%85O%E5%9E%8B%E5%9C%88%E8%87%B3%E9%97%B7%E7%9B%96.svg" src="_images/%E5%AE%89%E8%A3%85O%E5%9E%8B%E5%9C%88%E8%87%B3%E9%97%B7%E7%9B%96.svg" style="width: 7cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.174 </span><span class="caption-text">安装O型圈至闷盖</span><a class="headerlink" href="#id137" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.174 </span><span class="caption-text">安装O型圈至闷盖</span><a class="headerlink" href="#id138" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -1833,18 +1892,18 @@
 <li><p>将闷盖置于二关节外壳上，使闷盖上的孔对准外壳上的螺纹孔，使用2.5mm内六角螺丝刀拧紧6颗M3内六角螺钉，以固定二关节闷盖。安装闷盖时切勿压到驱动版上的线束。</p></li>
 </ul>
 <blockquote>
-<div><figure class="align-center" id="id138">
+<div><figure class="align-center" id="id139">
 <a class="reference internal image-reference" href="_images/安装闷盖（Zu35）.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E9%97%B7%E7%9B%96%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%AE%89%E8%A3%85%E9%97%B7%E7%9B%96%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.175 </span><span class="caption-text">安装闷盖</span><a class="headerlink" href="#id138" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.175 </span><span class="caption-text">安装闷盖</span><a class="headerlink" href="#id139" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id139">
+<figure class="align-center" id="id140">
 <a class="reference internal image-reference" href="_images/安装闷盖螺钉（Zu35）.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E9%97%B7%E7%9B%96%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%AE%89%E8%A3%85%E9%97%B7%E7%9B%96%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.176 </span><span class="caption-text">安装闷盖螺钉</span><a class="headerlink" href="#id139" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.176 </span><span class="caption-text">安装闷盖螺钉</span><a class="headerlink" href="#id140" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -1852,11 +1911,11 @@
 <li><p>在环形灯壳边缘的凹槽里涂抹一圈密封油脂，确保密封油脂涂抹均匀且充满凹槽。</p></li>
 </ul>
 <blockquote>
-<div><figure class="align-center" id="id140">
+<div><figure class="align-center" id="id141">
 <a class="reference internal image-reference" href="_images/环形灯壳涂抹油脂.svg"><img alt="_images/%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3%E6%B6%82%E6%8A%B9%E6%B2%B9%E8%84%82.svg" src="_images/%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3%E6%B6%82%E6%8A%B9%E6%B2%B9%E8%84%82.svg" style="width: 7cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.177 </span><span class="caption-text">环形灯壳涂抹油脂</span><a class="headerlink" href="#id140" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.177 </span><span class="caption-text">环形灯壳涂抹油脂</span><a class="headerlink" href="#id141" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -1864,31 +1923,31 @@
 <li><p>取对应O型圈，将其放入环形灯壳凹槽中，按压O型圈，使其完全嵌入到凹槽中。</p></li>
 </ul>
 <blockquote>
-<div><figure class="align-center" id="id141">
+<div><figure class="align-center" id="id142">
 <a class="reference internal image-reference" href="_images/安装O型圈至环形灯壳.svg"><img alt="_images/%E5%AE%89%E8%A3%85O%E5%9E%8B%E5%9C%88%E8%87%B3%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3.svg" src="_images/%E5%AE%89%E8%A3%85O%E5%9E%8B%E5%9C%88%E8%87%B3%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3.svg" style="width: 7cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.178 </span><span class="caption-text">安装O型圈至环形灯壳</span><a class="headerlink" href="#id141" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.178 </span><span class="caption-text">安装O型圈至环形灯壳</span><a class="headerlink" href="#id142" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 <ul class="simple">
-<li><p>将关节驱动版上的LED信号线插到环形灯壳的灯板上。</p></li>
+<li><p>将关节驱动版上的环形灯线插到环形灯壳的灯板上。</p></li>
 <li><p>将环形灯壳置于一关节外壳上，使环形灯壳上的孔对准外壳上的螺纹孔，使用2.5mm内六角螺丝刀拧紧6颗M3内六角螺钉，以固定一关节环形灯壳。安装环形灯壳时切勿压到驱动版上的线束。</p></li>
 </ul>
 <blockquote>
-<div><figure class="align-center" id="id142">
+<div><figure class="align-center" id="id143">
 <a class="reference internal image-reference" href="_images/安装环形灯壳（Zu35）.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%AE%89%E8%A3%85%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.179 </span><span class="caption-text">安装环形灯壳</span><a class="headerlink" href="#id142" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.179 </span><span class="caption-text">安装环形灯壳</span><a class="headerlink" href="#id143" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id143">
+<figure class="align-center" id="id144">
 <a class="reference internal image-reference" href="_images/安装环形灯壳螺钉（Zu35）.svg"><img alt="_images/%E5%AE%89%E8%A3%85%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%AE%89%E8%A3%85%E7%8E%AF%E5%BD%A2%E7%81%AF%E5%A3%B3%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.180 </span><span class="caption-text">安装环形灯壳螺钉</span><a class="headerlink" href="#id143" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.180 </span><span class="caption-text">安装环形灯壳螺钉</span><a class="headerlink" href="#id144" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -1897,88 +1956,88 @@
 <ul>
 <li><p>将一个装饰环放入一、二关节之间，使其拼接处与关节标定刻线对齐。</p>
 <blockquote>
-<div><figure class="align-center" id="id144">
+<div><figure class="align-center" id="id145">
 <a class="reference internal image-reference" href="_images/固定一关节第一个装饰环（Zu35）.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%B8%80%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%B8%80%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.181 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id144" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.181 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id145" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>使用PH1十字螺丝刀拧紧2颗M3十字螺钉，固定装饰环。</p>
 <blockquote>
-<div><figure class="align-center" id="id145">
+<div><figure class="align-center" id="id146">
 <a class="reference internal image-reference" href="_images/固定一关节第一个装饰环螺钉（Zu35）.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%B8%80%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%B8%80%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.182 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id145" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.182 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id146" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>将另一个装饰环放入一、二关节之间，使两个装饰环的卡扣对齐。</p>
 <blockquote>
-<div><figure class="align-center" id="id146">
+<div><figure class="align-center" id="id147">
 <a class="reference internal image-reference" href="_images/固定一关节第二个装饰环（Zu35）.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%B8%80%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%B8%80%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.183 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id146" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.183 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id147" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>使用PH1十字螺丝刀拧紧2颗M3十字螺钉，固定装饰环。</p>
 <blockquote>
-<div><figure class="align-center" id="id147">
+<div><figure class="align-center" id="id148">
 <a class="reference internal image-reference" href="_images/固定一关节第二个装饰环螺钉（Zu35）.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%B8%80%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%B8%80%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.184 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id147" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.184 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id148" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>将一个装饰环放入大臂、二关节之间，使其拼接处与关节标定刻线对齐。</p>
 <blockquote>
-<div><figure class="align-center" id="id148">
+<div><figure class="align-center" id="id149">
 <a class="reference internal image-reference" href="_images/固定二关节第一个装饰环（Zu35）.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%BA%8C%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%BA%8C%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.185 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id148" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.185 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id149" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>使用PH1十字螺丝刀拧紧2颗M3十字螺钉，固定装饰环。</p>
 <blockquote>
-<div><figure class="align-center" id="id149">
+<div><figure class="align-center" id="id150">
 <a class="reference internal image-reference" href="_images/固定二关节第一个装饰环螺钉（Zu35）.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%BA%8C%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%BA%8C%E5%85%B3%E8%8A%82%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" style="width: 8cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.186 </span><span class="caption-text">固定装饰环螺钉</span><a class="headerlink" href="#id149" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.186 </span><span class="caption-text">固定装饰环螺钉</span><a class="headerlink" href="#id150" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>将另一个装饰环放入大臂、二关节之间，使两个装饰环的卡扣对齐。</p>
 <blockquote>
-<div><figure class="align-center" id="id150">
+<div><figure class="align-center" id="id151">
 <a class="reference internal image-reference" href="_images/固定二关节第二个装饰环（Zu35）.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%BA%8C%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%BA%8C%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%EF%BC%88Zu35%EF%BC%89.svg" style="width: 9cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.187 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id150" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.187 </span><span class="caption-text">固定装饰环</span><a class="headerlink" href="#id151" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>使用PH1十字螺丝刀拧紧2颗M3十字螺钉，固定装饰环。</p>
 <blockquote>
-<div><figure class="align-center" id="id151">
+<div><figure class="align-center" id="id152">
 <a class="reference internal image-reference" href="_images/固定二关节第二个装饰环螺钉（Zu35）.svg"><img alt="_images/%E5%9B%BA%E5%AE%9A%E4%BA%8C%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" src="_images/%E5%9B%BA%E5%AE%9A%E4%BA%8C%E5%85%B3%E8%8A%82%E7%AC%AC%E4%BA%8C%E4%B8%AA%E8%A3%85%E9%A5%B0%E7%8E%AF%E8%9E%BA%E9%92%89%EF%BC%88Zu35%EF%BC%89.svg" style="width: 6cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.188 </span><span class="caption-text">固定装饰环螺钉</span><a class="headerlink" href="#id151" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.188 </span><span class="caption-text">固定装饰环螺钉</span><a class="headerlink" href="#id152" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -1989,7 +2048,7 @@
 </section>
 <section id="id19">
 <span id="id20"></span><h2><span class="section-number">4.5.6. </span>软件操作<a class="headerlink" href="#id19" title="链接到此标题。"></a></h2>
-<p>更换关节后，为确保关节正常运行，须通过软件依次执行以下四项关键操作：</p>
+<p>更换关节后，为确保关节正常运行，须通过软件依次执行以下四项操作：</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>关节序列号写入</p></li>
@@ -2002,29 +2061,29 @@
 <ol class="arabic">
 <li><p>连接机器人连接线至控制柜，使用手柄或示教器使控制柜上电。</p></li>
 <li><p>打开Coboπ软件，连接机器人，进入 <strong>主页</strong>，点击 <strong>电源</strong> 和 <strong>使能</strong> 按钮，使机器人上电并使能。</p>
-<figure class="align-center" id="id152">
+<figure class="align-center" id="id153">
 <a class="reference internal image-reference" href="_images/机器人上电并使能.jpg"><img alt="_images/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8A%E7%94%B5%E5%B9%B6%E4%BD%BF%E8%83%BD.jpg" src="_images/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8A%E7%94%B5%E5%B9%B6%E4%BD%BF%E8%83%BD.jpg" style="width: 18cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.189 </span><span class="caption-text">机器人上电上使能</span><a class="headerlink" href="#id152" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.189 </span><span class="caption-text">机器人上电上使能</span><a class="headerlink" href="#id153" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </li>
 <li><p>进入 <strong>首页</strong>，点击 <a class="reference internal" href="_images/集合工具包按钮.png"><img alt="集合工具包" src="_images/%E9%9B%86%E5%90%88%E5%B7%A5%E5%85%B7%E5%8C%85%E6%8C%89%E9%92%AE.png" style="width: 18px;" /></a> 按钮，再点击 <strong>维护</strong> 按钮，输入密码（JAKAAMAZING），进入 <strong>维护</strong> 界面。</p>
-<figure class="align-center" id="id153">
+<figure class="align-center" id="id154">
 <a class="reference internal image-reference" href="_images/维护界面-输入密码.png"><img alt="_images/%E7%BB%B4%E6%8A%A4%E7%95%8C%E9%9D%A2-%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81.png" src="_images/%E7%BB%B4%E6%8A%A4%E7%95%8C%E9%9D%A2-%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81.png" style="width: 18cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.190 </span><span class="caption-text">维护界面-输入密码</span><a class="headerlink" href="#id153" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.190 </span><span class="caption-text">维护界面-输入密码</span><a class="headerlink" href="#id154" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </li>
 <li><p>进入 <strong>伺服调试</strong> 界面，点击 <strong>进入调试</strong> 开始调试。</p>
-<figure class="align-center" id="id154">
+<figure class="align-center" id="id155">
 <a class="reference internal image-reference" href="_images/维护界面-伺服调试.png"><img alt="_images/%E7%BB%B4%E6%8A%A4%E7%95%8C%E9%9D%A2-%E4%BC%BA%E6%9C%8D%E8%B0%83%E8%AF%95.png" src="_images/%E7%BB%B4%E6%8A%A4%E7%95%8C%E9%9D%A2-%E4%BC%BA%E6%9C%8D%E8%B0%83%E8%AF%95.png" style="width: 18cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.191 </span><span class="caption-text">维护界面-伺服调试</span><a class="headerlink" href="#id154" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.191 </span><span class="caption-text">维护界面-伺服调试</span><a class="headerlink" href="#id155" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -2033,20 +2092,20 @@
 <p class="admonition-title">备注</p>
 <p>机器人IP可在Coboπ软件顶部导航栏查看。</p>
 </div>
-<figure class="align-center" id="id155">
+<figure class="align-center" id="id156">
 <a class="reference internal image-reference" href="_images/伺服调试软件-连接机器人.png"><img alt="_images/%E4%BC%BA%E6%9C%8D%E8%B0%83%E8%AF%95%E8%BD%AF%E4%BB%B6-%E8%BF%9E%E6%8E%A5%E6%9C%BA%E5%99%A8%E4%BA%BA.png" src="_images/%E4%BC%BA%E6%9C%8D%E8%B0%83%E8%AF%95%E8%BD%AF%E4%BB%B6-%E8%BF%9E%E6%8E%A5%E6%9C%BA%E5%99%A8%E4%BA%BA.png" style="width: 15cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.192 </span><span class="caption-text">连接机器人</span><a class="headerlink" href="#id155" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.192 </span><span class="caption-text">连接机器人</span><a class="headerlink" href="#id156" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </li>
 <li><p>进入 <strong>生产</strong> 界面，选择更换的关节，点击 <strong>读取参数</strong>，在 <strong>9009序列号</strong> 后的输入框内输入更换关节的序列号，点击 <strong>设置</strong>。</p>
-<figure class="align-center" id="id156">
+<figure class="align-center" id="id157">
 <a class="reference internal image-reference" href="_images/伺服调试软件-写入序列号.png"><img alt="_images/%E4%BC%BA%E6%9C%8D%E8%B0%83%E8%AF%95%E8%BD%AF%E4%BB%B6-%E5%86%99%E5%85%A5%E5%BA%8F%E5%88%97%E5%8F%B7.png" src="_images/%E4%BC%BA%E6%9C%8D%E8%B0%83%E8%AF%95%E8%BD%AF%E4%BB%B6-%E5%86%99%E5%85%A5%E5%BA%8F%E5%88%97%E5%8F%B7.png" style="width: 15cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.193 </span><span class="caption-text">写入序列号</span><a class="headerlink" href="#id156" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.193 </span><span class="caption-text">写入序列号</span><a class="headerlink" href="#id157" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -2054,20 +2113,20 @@
 <p><strong>关节参数写入：</strong></p>
 <ol class="arabic">
 <li><p>进入 <strong>驱动器调试</strong> 界面，在 <strong>编号</strong> 列选择 <strong>14 总线设置</strong> ，将 <strong>1401 本机节点号</strong> 的值修改为更换的关节号，点击 <strong>写入选中</strong> 按钮写入参数。</p>
-<figure class="align-center" id="id157">
+<figure class="align-center" id="id158">
 <a class="reference internal image-reference" href="_images/写入本机节点号.png"><img alt="_images/%E5%86%99%E5%85%A5%E6%9C%AC%E6%9C%BA%E8%8A%82%E7%82%B9%E5%8F%B7.png" src="_images/%E5%86%99%E5%85%A5%E6%9C%AC%E6%9C%BA%E8%8A%82%E7%82%B9%E5%8F%B7.png" style="width: 15cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.194 </span><span class="caption-text">写入本机节点号</span><a class="headerlink" href="#id157" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.194 </span><span class="caption-text">写入本机节点号</span><a class="headerlink" href="#id158" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </li>
 <li><p>在 <strong>编号</strong> 列选择 <strong>22 编码器参数</strong> ，将 <strong>2201 ABS编码器单圈分辨率</strong> 和 <strong>2219 总线指令分辨率</strong> 的值修改为 <strong>23</strong> ，点击 <strong>写入选中</strong> 按钮写入参数。</p>
-<figure class="align-center" id="id158">
+<figure class="align-center" id="id159">
 <a class="reference internal image-reference" href="_images/写入编码器参数.png"><img alt="_images/%E5%86%99%E5%85%A5%E7%BC%96%E7%A0%81%E5%99%A8%E5%8F%82%E6%95%B0.png" src="_images/%E5%86%99%E5%85%A5%E7%BC%96%E7%A0%81%E5%99%A8%E5%8F%82%E6%95%B0.png" style="width: 15cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.195 </span><span class="caption-text">写入编码器参数</span><a class="headerlink" href="#id158" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.195 </span><span class="caption-text">写入编码器参数</span><a class="headerlink" href="#id159" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -2075,20 +2134,20 @@
 <p><strong>升级伺服：</strong></p>
 <ol class="arabic">
 <li><p>回到Coboπ软件，进入 <strong>主页</strong>，点击 <strong>使能</strong> 和 <strong>电源</strong> 按钮，使机器人下使能、下电。</p>
-<figure class="align-center" id="id159">
+<figure class="align-center" id="id160">
 <a class="reference internal image-reference" href="_images/机器人下使能下电.png"><img alt="_images/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8B%E4%BD%BF%E8%83%BD%E4%B8%8B%E7%94%B5.png" src="_images/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8B%E4%BD%BF%E8%83%BD%E4%B8%8B%E7%94%B5.png" style="width: 18cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.196 </span><span class="caption-text">机器人下使能下电</span><a class="headerlink" href="#id159" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.196 </span><span class="caption-text">机器人下使能下电</span><a class="headerlink" href="#id160" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </li>
 <li><p>点击 <strong>设置</strong> &gt; <strong>版本升级</strong> 进入 <strong>版本升级</strong> 界面。</p>
-<figure class="align-center" id="id160">
+<figure class="align-center" id="id161">
 <a class="reference internal image-reference" href="_images/版本升级界面.png"><img alt="_images/%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%E7%95%8C%E9%9D%A2.png" src="_images/%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%E7%95%8C%E9%9D%A2.png" style="width: 18cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.197 </span><span class="caption-text">版本升级界面</span><a class="headerlink" href="#id160" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.197 </span><span class="caption-text">版本升级界面</span><a class="headerlink" href="#id161" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -2097,11 +2156,11 @@
 <p class="admonition-title">重要</p>
 <p>升级包的名称不可修改，必须保持原文件名。</p>
 </div>
-<figure class="align-center" id="id161">
+<figure class="align-center" id="id162">
 <a class="reference internal image-reference" href="_images/升级伺服.png"><img alt="_images/%E5%8D%87%E7%BA%A7%E4%BC%BA%E6%9C%8D.png" src="_images/%E5%8D%87%E7%BA%A7%E4%BC%BA%E6%9C%8D.png" style="width: 18cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.198 </span><span class="caption-text">升级伺服</span><a class="headerlink" href="#id161" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.198 </span><span class="caption-text">升级伺服</span><a class="headerlink" href="#id162" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -2110,11 +2169,11 @@
 <p><strong>关节校准：</strong></p>
 <ol class="arabic">
 <li><p>打开Coboπ软件，进入 <strong>主页</strong>，点击 <strong>电源</strong> 和 <strong>使能</strong> 按钮，使机器人上电并使能。</p>
-<figure class="align-center" id="id162">
+<figure class="align-center" id="id163">
 <a class="reference internal image-reference" href="_images/机器人上电并使能.jpg"><img alt="_images/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8A%E7%94%B5%E5%B9%B6%E4%BD%BF%E8%83%BD.jpg" src="_images/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8A%E7%94%B5%E5%B9%B6%E4%BD%BF%E8%83%BD.jpg" style="width: 18cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.199 </span><span class="caption-text">机器人上电上使能</span><a class="headerlink" href="#id162" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.199 </span><span class="caption-text">机器人上电上使能</span><a class="headerlink" href="#id163" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -2122,22 +2181,22 @@
 <ul>
 <li><p>标定姿态：</p>
 <blockquote>
-<div><figure class="align-center" id="id163">
+<div><figure class="align-center" id="id164">
 <a class="reference internal image-reference" href="_images/标定姿态.svg"><img alt="_images/%E6%A0%87%E5%AE%9A%E5%A7%BF%E6%80%81.svg" src="_images/%E6%A0%87%E5%AE%9A%E5%A7%BF%E6%80%81.svg" style="width: 4cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.200 </span><span class="caption-text">标定姿态</span><a class="headerlink" href="#id163" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.200 </span><span class="caption-text">标定姿态</span><a class="headerlink" href="#id164" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 </li>
 <li><p>标定刻线位置：</p>
 <blockquote>
-<div><figure class="align-center" id="id164">
+<div><figure class="align-center" id="id165">
 <a class="reference internal image-reference" href="_images/标定刻线位置.svg"><img alt="_images/%E6%A0%87%E5%AE%9A%E5%88%BB%E7%BA%BF%E4%BD%8D%E7%BD%AE.svg" src="_images/%E6%A0%87%E5%AE%9A%E5%88%BB%E7%BA%BF%E4%BD%8D%E7%BD%AE.svg" style="width: 10cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.201 </span><span class="caption-text">标定刻线位置</span><a class="headerlink" href="#id164" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.201 </span><span class="caption-text">标定刻线位置</span><a class="headerlink" href="#id165" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -2150,17 +2209,17 @@
 </li>
 <li><p>机器人移至关节校准姿态后，返回 <strong>首页</strong>，点击 <a class="reference internal" href="_images/集合工具包按钮.png"><img alt="集合工具包" src="_images/%E9%9B%86%E5%90%88%E5%B7%A5%E5%85%B7%E5%8C%85%E6%8C%89%E9%92%AE.png" style="width: 18px;" /></a> 按钮，再点击 <strong>维护</strong> 按钮，输入密码（JAKAAMAZING），进入 <strong>维护</strong> 界面。</p></li>
 <li><p>进入 <strong>关节校准</strong> 界面，点击 <strong>关节x校准</strong> （x为更换的关节号），此时控制器将此关节当前角度作为零位角度。</p>
-<figure class="align-center" id="id165">
+<figure class="align-center" id="id166">
 <a class="reference internal image-reference" href="_images/维护界面-关节校准.png"><img alt="_images/%E7%BB%B4%E6%8A%A4%E7%95%8C%E9%9D%A2-%E5%85%B3%E8%8A%82%E6%A0%A1%E5%87%86.png" src="_images/%E7%BB%B4%E6%8A%A4%E7%95%8C%E9%9D%A2-%E5%85%B3%E8%8A%82%E6%A0%A1%E5%87%86.png" style="width: 18cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.202 </span><span class="caption-text">维护界面-关节校准</span><a class="headerlink" href="#id165" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.202 </span><span class="caption-text">维护界面-关节校准</span><a class="headerlink" href="#id166" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </li>
 <li><p>校准后进入 <strong>手动</strong> 界面，检查校准关节的角度是否与标定姿态关节角度一致。</p>
-<table class="docutils align-default" id="id166">
-<caption><span class="caption-number">表 4.10 </span><span class="caption-text">标定姿态关节角度</span><a class="headerlink" href="#id166" title="链接到此表格。"></a></caption>
+<table class="docutils align-default" id="id167">
+<caption><span class="caption-number">表 4.11 </span><span class="caption-text">标定姿态关节角度</span><a class="headerlink" href="#id167" title="链接到此表格。"></a></caption>
 <colgroup>
 <col style="width: 15.0%" />
 <col style="width: 15.0%" />
@@ -2190,11 +2249,11 @@
 </table>
 </li>
 <li><p>打开伺服上位机软件，连接机器人，进入 <strong>生产</strong> 界面，选择更换的关节，点击 <strong>Z值标定</strong> 进行标定。标定完成后，结果将显示在 <strong>日志</strong> 框内。</p>
-<figure class="align-center" id="id167">
+<figure class="align-center" id="id168">
 <a class="reference internal image-reference" href="_images/Z值标定.png"><img alt="_images/Z%E5%80%BC%E6%A0%87%E5%AE%9A.png" src="_images/Z%E5%80%BC%E6%A0%87%E5%AE%9A.png" style="width: 15cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.203 </span><span class="caption-text">Z值标定</span><a class="headerlink" href="#id167" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.203 </span><span class="caption-text">Z值标定</span><a class="headerlink" href="#id168" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -2203,11 +2262,11 @@
 <a class="reference internal image-reference" href="_images/禁用伺服DH参数.png"><img alt="_images/%E7%A6%81%E7%94%A8%E4%BC%BA%E6%9C%8DDH%E5%8F%82%E6%95%B0.png" src="_images/%E7%A6%81%E7%94%A8%E4%BC%BA%E6%9C%8DDH%E5%8F%82%E6%95%B0.png" style="width: 15cm;" />
 </a>
 </figure>
-<figure class="align-center" id="id168">
+<figure class="align-center" id="id169">
 <a class="reference internal image-reference" href="_images/禁用伺服DH参数2.png"><img alt="_images/%E7%A6%81%E7%94%A8%E4%BC%BA%E6%9C%8DDH%E5%8F%82%E6%95%B02.png" src="_images/%E7%A6%81%E7%94%A8%E4%BC%BA%E6%9C%8DDH%E5%8F%82%E6%95%B02.png" style="width: 15cm;" />
 </a>
 <figcaption>
-<p><span class="caption-number">图 4.204 </span><span class="caption-text">禁用伺服DH参数</span><a class="headerlink" href="#id168" title="链接到此图片"></a></p>
+<p><span class="caption-number">图 4.204 </span><span class="caption-text">禁用伺服DH参数</span><a class="headerlink" href="#id169" title="链接到此图片"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -2220,7 +2279,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
         <a href="%E6%9B%B4%E6%8D%A2%E6%9C%AB%E7%AB%AF%E6%B3%95%E5%85%B0.html" class="btn btn-neutral float-left" title="4.4. 更换末端法兰" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="%E6%89%93%E5%8C%85%E5%8F%8A%E8%BF%90%E8%BE%93.html" class="btn btn-neutral float-right" title="5. 打包机运输" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="%E6%89%93%E5%8C%85%E5%8F%8A%E8%BF%90%E8%BE%93.html" class="btn btn-neutral float-right" title="5. 打包及运输" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
